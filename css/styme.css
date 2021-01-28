@@ -1,0 +1,25 @@
+body {
+    background: #007bff;
+    background: linear-gradient(to right, #dfe9f3, #fff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 360x;
+    margin: 2rem auto;
+    height: 560xp;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    background: white;
+    overflow: hidden;
+}
+
+.content {
+    text-align: center;
+    border-bottom: 2px solid #e5e5e5;
+}
