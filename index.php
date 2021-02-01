@@ -28,8 +28,9 @@
       <div class="card-body p-5">
   <section class="py-5">
     <div class="container">
-      <h1 class="display-4">-- ช่องทางการติดต่อ --</h1>
-      <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
+      <h5 class="display-4">-- ช่องทางการติดต่อ --</h5>
+      <p class="lead">  <a href="https://www.facebook.com/chititpat.Sripoot">faebook-pakping</a>  <a href="https://www.facebook.com/jeerachon9/">facebook-G</a>
+      <a href="https://www.facebook.com/profile.php?id=100002182427958">facebook-big</a></p>
     </div>
   </section>
   </div>
