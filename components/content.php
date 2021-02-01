@@ -1,48 +1,57 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
-    <!-- Team Member 1 -->
-    <div class="col-xl-3 col-md-6 mb-4">
+ 
+    <!-- Team-->
+    <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+          <h5 class="card-title mb-0">Food supplement1</h5>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-auto btn-block">More</button>
         </div>
       </div>
     </div>
-    <!-- Team Member 2 -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Team -->
+    <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/jUPOXXRNdcA/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+        <h5 class="card-title mb-0">Food supplement2</h5>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-auto btn-block">More</button>
         </div>
       </div>
     </div>
-    <!-- Team Member 3 -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Team -->
+    <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/VRB1LJoTZ6w/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+        <h5 class="card-title mb-0">Food supplement3</h5>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-auto btn-block">More</button>
         </div>
       </div>
     </div>
-    <!-- Team Member 4 -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <!-- Team -->
+    <div class="col-xl-4 col-md-6 mb-4">
       <div class="card border-0 shadow">
-        <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+        <img src="https://source.unsplash.com/HPZs4EXRFSU/500x350" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">Team Member</h5>
-          <div class="card-text text-black-50">Web Developer</div>
+        <h5 class="card-title mb-0">Food supplement4</h5>
+          <br>
+          <button type="button" class="btn btn-outline-primary btn-auto btn-block">More</button>
         </div>
       </div>
     </div>
+
+    
   </div>
   <!-- /.row -->
 
 </div>
 <!-- /.container -->
+
+<!--ที่เก็บรูป https://unsplash.com/ -->

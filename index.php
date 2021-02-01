@@ -18,24 +18,31 @@
   <?php
   include('components/navbar.php');
   ?>
-<?php
+  <?php
   include 'components/header.php'
   ?>
   <br>
-<!-- Page Content -->
-<section class="py-5">
+  <!-- Page Content -->
   <div class="container">
-    <h1 class="display-4">Full Page Image Slider</h1>
-    <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+  <section class="py-5">
+    <div class="container">
+      <h1 class="display-4">-- ช่องทางการติดต่อ --</h1>
+      <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
+    </div>
+  </section>
   </div>
-</section>
-<?php
-  include 'components/content.php'
-  ?>
-
+    </div>
+  </div>
+  
+        <?php
+        include 'components/content.php'
+        ?>
+    
   <?php
   include('./components/footer.php')
   ?>
-  </body>
+</body>
 
 </html>
