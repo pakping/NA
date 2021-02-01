@@ -18,30 +18,24 @@
   <?php
   include('components/navbar.php');
   ?>
+<?php
+  include 'components/header.php'
+  ?>
+  <br>
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h1 class="display-4">Full Page Image Slider</h1>
+    <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
+  </div>
+</section>
+<?php
+  include 'components/content.php'
+  ?>
 
-  <<<<<<< HEAD <?php
-                include 'components/header.php'
-                ?> <br>
-    <!-- Page Content -->
-    <section class="py-5">
-      <div class="container">
-        <h1 class="display-4">Full Page Image Slider</h1>
-        <p class="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
-      </div>
-    </section>
-
-    <?php
-    include 'components/content.php'
-    ?>
-
-
-    </div>
-    <!-- /.container -->
-
-
-    <?php
-    include('./components/footer.php')
-    ?>
-</body>
+  <?php
+  include('./components/footer.php')
+  ?>
+  </body>
 
 </html>
