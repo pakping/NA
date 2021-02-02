@@ -1,3 +1,6 @@
+<?php
+include '../auth/Sessionpersist.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,14 +21,14 @@
                     <div class="card card-signin my-5  ">
                         <div class="card-body ">
                             <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก / The Na thailand</h5>
-                            <form class="form-signin" action="checkLogin.php" method="POST">
+                            <form class="form-signin" action="checklogin.php" method = "post">
                                 <div class="form-label-group my-4">
-                                    <input type="text" id="uname" class="form-control" placeholder="Email address" required>
+                                    <input type="text" id="inputEmail" name="uname" class="form-control" placeholder="Email address" required autofocus>
                                     <label for="inputEmail">อีเมล</label>
                                 </div>
 
                                 <div class="form-label-group  my-4">
-                                    <input type="password" id="psws" class="form-control" placeholder="Password" required>
+                                    <input type="password" id="inputPassword" name ="psw" class="form-control" placeholder="Password" required>
                                     <label for="inputPassword">รหัสผ่าน</label>
                                 </div>
 
@@ -43,7 +46,6 @@
             </div>
         </div>
     </div>
- <?php   include '../components/footer.php' ?>
 </body>
 
 

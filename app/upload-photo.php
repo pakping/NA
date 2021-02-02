@@ -1,4 +1,6 @@
 <?php
+include '../auth/Sessionpersist.php';
+
 
 require "../db/connect.php";
 if (isset($_POST['btn_upload'])) {
