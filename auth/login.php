@@ -14,12 +14,12 @@
     <div class="container">
         <div class="bodycen">
             <div class="row">
-                <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
-                    <div class="card card-signin my-5 ">
-                        <div class="card-body">
-                            <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก/The Na thailand</h5>
+                <div class="col-sm-9 col-md-7 col-lg-8 mx-auto">
+                    <div class="card card-signin my-5  ">
+                        <div class="card-body ">
+                            <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก / The Na thailand</h5>
                             <form class="form-signin">
-                                <div class="form-label-group  my-4">
+                                <div class="form-label-group my-4">
                                     <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                                     <label for="inputEmail">อีเมล</label>
                                 </div>
@@ -33,9 +33,10 @@
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                                 </div>
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">เข้าสู่ระบบ</button>
-                                <a href="">สมัครสมาชิก</a>
+                                <button class="btn btn-primary btn-block buttontt" type="submit" >เข้าสู่ระบบ</button>
+                                
                             </form>
+                            <!-- <a href="">สมัครสมาชิก</a> -->
                         </div>
                     </div>
                 </div>
@@ -56,6 +57,7 @@
         border: 0;
         border-radius: 1rem;
         box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+        background-color: #f7f7f7;
     }
 
     .card-signin .card-title {
@@ -74,7 +76,7 @@
 
     .form-signin .btn {
         font-size: 80%;
-        border-radius: 5rem;
+        border-radius: 1rem;
         letter-spacing: .1rem;
         font-weight: bold;
         padding: 1rem;
@@ -88,7 +90,7 @@
 
     .form-label-group input {
         height: auto;
-        border-radius: 2rem;
+        border-radius: 1rem;
     }
 
     .form-label-group>input,
