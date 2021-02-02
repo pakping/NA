@@ -15,7 +15,7 @@
                     <a class="nav-link" href="#">สินค้าของเรา</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">เกี่ยวกับเรา</a>
+                    <a class="nav-link" href="">เกี่ยวกับเรา</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -24,7 +24,7 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">เข้าสู่ระบบ</a>
+                    <a class="nav-link" href="auth/login.php">เข้าสู่ระบบ</a>
                 </li>
             </ul>
         </div>
