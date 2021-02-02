@@ -26,7 +26,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
                 
-                <li class="breadcrumb-item "><a href="Library.php">Library</a></li>
+                <li class="breadcrumb-item "><a href="../Library.php">Library</a></li>
 
                 <li class="breadcrumb-item active" aria-current="page"> item</li>
             </ol>
