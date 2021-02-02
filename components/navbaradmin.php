@@ -24,7 +24,7 @@
             </form>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">เข้าสู่ระบบ</a>
+                
                     <a class="nav-link" aria-current="page" href="#">ออกจากระบบ</a>
                 </li>
             </ul>
