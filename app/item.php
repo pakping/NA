@@ -1,3 +1,6 @@
+<?php
+include '../auth/Sessionpersist.php';
+?>
 <!doctype html>
 <html lang="en">
 
@@ -35,29 +38,47 @@
             <small>Secondary Text</small>
         </h1>
         <div class="row">
-        <!-- while แสดงรูปภาพ -->
-            <?php
-            $a = 0;
-            while ($a <= 10) {
-                $a += 1;
-            ?>
             <!-- card แสดงรูปภาพ -->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">รูปที่ <?php echo "$a"; ?></a>
-                            </h4>
-                            <p class="card-text">กรอกรายละเอียด</p>
-                            <button class="btn btn-primary">download</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-            <?php
-            }
-            ?>
+            <div class="container">
+					<div class="row g-2">
+						<?php
+						require "db/connect.php";
+						$Squery = "SELECT * FROM tbl_photos ORDER BY img_id DESC";
+						if ($result = mysqli_query($con, $Squery)) {
+							while ($img = mysqli_fetch_array($result)) {
+
+						?>
+								<!-- Team photo-->
+
+
+								<div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-0 shadow">
+										<a href="<?php echo $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
+											<img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="...">
+										</a>
+										<div class="card-body text-center">
+											<h5 class="card-title"><?php echo $img['img_title']; ?></h5>
+											<div class="card-text text-black-50"><?php echo $img['img_name']; ?></div>
+											<a href="<?php	echo$img['img_path']?>" download="<?php $img['img_title'] ?>"><button class="btn">download</button></a>
+											<form action= 'function/delete.php' method= "POST">
+											<input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>"/>
+												<button type='submit'>humgee</button>
+											</form>
+										</div>
+									</div>
+								</div>
+
+
+						<?php
+							}
+						}
+						?>
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+		
+                
         </div>
         <!-- Pagination -->
         <ul class="pagination justify-content-center">
