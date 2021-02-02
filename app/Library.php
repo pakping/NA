@@ -5,26 +5,48 @@ include '../auth/Sessionpersist.php';
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+<!-- Required meta tags
+===================================================================================================-->
+    <title>Hello, world!</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <META NAME="robots" CONTENT="noindex,onfollow">
+ <!-- END Required meta tags 
+===================================================================================================-->   
 
-    <!-- Bootstrap CSS -->
+<!-- Bootstrap CSS 
+===================================================================================================-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- END Bootstrap CSS 
+===================================================================================================-->
+
+<!--  CSS 
+===================================================================================================-->
     <link rel="stylesheet" href="../css/style.css">
-    <title>Hello, world!</title>
+<!-- END CSS 
+===================================================================================================-->
+    
 </head>
 
 <body>
 
-    <!-- Navigation -->
+<!-- Navigation
+=================================================================================================== -->
     <?php
     include('../components/navbar-2.php');
     ?>
-    <hr><br><br><br>
-    <!-- Page Content -->
+
+ <!-- END Navigation
+=================================================================================================== -->   
+
+<hr><br><br><br>
+
+<!-- *** Page Content 
+=================================================================================================-->
     <div class="container">
-        <!-- Page Heading -->
+
+<!-- Page Heading 
+=================================================================================================-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
@@ -34,11 +56,16 @@ include '../auth/Sessionpersist.php';
                 <li class="breadcrumb-item active" aria-current="page"> item</li>
             </ol>
         </nav>
+<!--END Page Heading 
+=================================================================================================-->
+
         <h1 class="my-4">Page Heading
             <small>Secondary Text</small>
         </h1>
         <div class="row">
-        <!-- while แสดงรูปภาพ -->
+
+ <!-- while แสดงรูปภาพ
+================================================================================================= -->
             <?php
              require "../db/connect.php";
              $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
@@ -46,7 +73,12 @@ include '../auth/Sessionpersist.php';
                  while ($img = mysqli_fetch_array($result)) {
 
             ?>
-            <!-- card แสดงรูปภาพ -->
+<!-- END while แสดงรูปภาพ
+================================================================================================= -->
+
+
+<!-- card แสดงรูปภาพ
+ =================================================================================================-->
             <div class="col-xl-3 col-md-6 mb-4">
 									<div class="card border-0 shadow">
 										<div class="card-body text-center">
@@ -63,7 +95,12 @@ include '../auth/Sessionpersist.php';
             }}
             ?>
         </div>
-        <!-- Pagination -->
+
+<!-- card แสดงรูปภาพ
+ =================================================================================================-->
+
+<!-- Pagination  
+=================================================================================================-->
         <ul class="pagination justify-content-center">
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
@@ -87,12 +124,22 @@ include '../auth/Sessionpersist.php';
                 </a>
             </li>
         </ul>
+<!--END Pagination  
+=================================================================================================-->
 
     </div>
     <!-- /.container -->
+
+ <!--***END  Page Content 
+=================================================================================================-->
+
+ <!-- Footer 
+=================================================================================================-->
     <?php
     include('../components/footer.php')
     ?>
+<!--END Footer 
+=================================================================================================-->
 </body>
 
 </html>
