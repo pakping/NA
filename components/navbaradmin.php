@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">หน้าหลัก <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../index.php">หน้าหลัก <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">เพิ่มประเภทสินค้า</a>
+                    <a class="nav-link" href="../app/upload-type.php">เพิ่มประเภทสินค้า</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">เพิ่มรูปภาพวีดีโอ</a>
+                    <a class="nav-link" href="../app/upload-photo.php">เพิ่มรูปภาพวีดีโอ</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">จัดการรูปภาพวีดีโอ</a>
