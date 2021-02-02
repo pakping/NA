@@ -18,14 +18,14 @@
                     <div class="card card-signin my-5  ">
                         <div class="card-body ">
                             <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก / The Na thailand</h5>
-                            <form class="form-signin">
+                            <form class="form-signin" action="checkLogin.php" method="POST">
                                 <div class="form-label-group my-4">
-                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                                    <input type="text" id="uname" class="form-control" placeholder="Email address" required>
                                     <label for="inputEmail">อีเมล</label>
                                 </div>
 
                                 <div class="form-label-group  my-4">
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                    <input type="password" id="psws" class="form-control" placeholder="Password" required>
                                     <label for="inputPassword">รหัสผ่าน</label>
                                 </div>
 
@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+ <?php   include '../components/footer.php' ?>
 </body>
 
 
