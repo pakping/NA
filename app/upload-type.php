@@ -78,9 +78,5 @@ include '../auth/Sessionpersist.php';
 
 </body>
 
-<<<<<<< HEAD
 
 </html>
-=======
-</html>
->>>>>>> dc1ea18346a92843ecc10be8e9fe4b0bb218252c

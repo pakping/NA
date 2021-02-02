@@ -19,7 +19,7 @@ include '../auth/Sessionpersist.php';
 
     <!-- Navigation -->
     <?php
-    include('../components/navbar.php');
+    include('../components/navbar-2.php');
     ?>
     <hr><br><br><br>
     <!-- Page Content -->
