@@ -40,26 +40,27 @@ include '../auth/Sessionpersist.php';
         <div class="row">
         <!-- while แสดงรูปภาพ -->
             <?php
-            $a = 0;
-            while ($a <= 10) {
-                $a += 1;
+             require "../db/connect.php";
+             $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
+             if ($result = mysqli_query($con, $Squery)) {
+                 while ($img = mysqli_fetch_array($result)) {
+
             ?>
             <!-- card แสดงรูปภาพ -->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">รูปที่ <?php echo "$a"; ?></a>
-                            </h4>
-                            <p class="card-text">กรอกรายละเอียด</p>
-                            <button class="btn btn-primary">download</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-xl-3 col-md-6 mb-4">
+									<div class="card border-0 shadow">
+										<div class="card-body text-center">
+											<h5 class="card-title"><?php echo $img['Tag']; ?></h5>
+											<form action= 'item.php' method= "POST">
+											<input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>"/>
+												<button type='submit'>humgee</button>
+											</form>
+										</div>
+									</div>
+								</div>
                 <!-- /.row -->
             <?php
-            }
+            }}
             ?>
         </div>
         <!-- Pagination -->

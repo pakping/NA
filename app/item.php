@@ -42,8 +42,9 @@ include '../auth/Sessionpersist.php';
             <div class="container">
 					<div class="row g-2">
 						<?php
-						require "../db/connect.php";
-						$Squery = "SELECT * FROM tbl_photos ORDER BY img_id DESC";
+                        require "../db/connect.php";
+                        $dir = $_POST['directory'];
+						$Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
 						if ($result = mysqli_query($con, $Squery)) {
 							while ($img = mysqli_fetch_array($result)) {
 
