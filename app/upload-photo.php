@@ -1,3 +1,28 @@
+<?php
+
+require "db/connect.php";
+if (isset($_POST['btn_upload'])) {
+    $filetmp = $_FILES['file_img']['tmp_name'];
+    $filename = $_FILES['file_img']['name'];
+    $filetype = $_FILES['file_img']['type'];
+    $filepath = 'img/' . $filename;
+    $filetitle = $_POST['img_title'];
+
+    move_uploaded_file($filetmp, $filepath);
+    $query = "INSERT INTO tbl_photos (img_name, img_type, img_path, img_title)
+                    VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
+
+    if (mysqli_stmt_execute($stmt)) {
+        header("Location: index.php");
+    } else {
+        echo "Something went wrong!";
+    }
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
