@@ -1,6 +1,6 @@
 <?php
 
-require "db/connect.php";
+require "../db/connect.php";
 if (isset($_POST['btn_upload'])) {
     $filetmp = $_FILES['file_img']['tmp_name'];
     $filename = $_FILES['file_img']['name'];
@@ -58,7 +58,7 @@ if (isset($_POST['btn_upload'])) {
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">เลือกรูปภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <input type="file" name="file_img-vdo" required>
+              <input type="file" name="file_img" required>
             </div>
 
 
@@ -67,14 +67,14 @@ if (isset($_POST['btn_upload'])) {
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">ชื่อรูปภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="namephoto" placeholder=" namephoto">
+              <input type="text" class="form-control"  name="img_title" placeholder="Image-vdo name" required>
             </div>
           </div>
 
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">ประเภทภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <select name="typephoto" class="form-control">
+              <select name="typephoto" class="form-control" required>
                 <option selected>Choose...</option>
                 <option>...</option>
               </select>
@@ -83,7 +83,7 @@ if (isset($_POST['btn_upload'])) {
           </div>
           <div class="form-group row">
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" class="btn btn-primary">อัพโหลด</button>
+              <button type="submit" value="Upload Image" class="btn btn-primary">อัพโหลด</button>
             </div>
           </div>
         </form>
@@ -100,9 +100,5 @@ if (isset($_POST['btn_upload'])) {
 
 </body>
 
-<<<<<<< HEAD
 
 </html>
-=======
-</html>
->>>>>>> dc1ea18346a92843ecc10be8e9fe4b0bb218252c
