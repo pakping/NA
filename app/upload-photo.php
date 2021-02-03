@@ -1,26 +1,23 @@
 <?php
-include '../auth/Sessionpersist.php';
-
-
 require "../db/connect.php";
 if (isset($_POST['btn_upload'])) {
-    $filetmp = $_FILES['file_img']['tmp_name'];
-    $filename = $_FILES['file_img']['name'];
-    $filetype = $_FILES['file_img']['type'];
-    $filepath = 'img/' . $filename;
-    $filetitle = $_POST['img_title'];
+  $filetmp = $_FILES['file_img']['tmp_name'];
+  $filename = $_FILES['file_img']['name'];
+  $filetype = $_FILES['file_img']['type'];
+  $filepath = 'img/' . $filename;
+  $filetitle = $_POST['img_title'];
 
-    move_uploaded_file($filetmp, $filepath);
-    $query = "INSERT INTO tbl_photos (img_name, img_type, img_path, img_title)
+  move_uploaded_file($filetmp, $filepath);
+  $query = "INSERT INTO tbl_photos (img_name, img_type,img_path, img_title)
                     VALUES (?, ?, ?, ?)";
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
+  $stmt = mysqli_prepare($con, $query);
+  mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
 
-    if (mysqli_stmt_execute($stmt)) {
-        header("Location: index.php");
-    } else {
-        echo "Something went wrong!";
-    }
+  if (mysqli_stmt_execute($stmt)) {
+    header("Location: ");
+  } else {
+    echo "Something went wrong!";
+  }
 }
 
 ?>
@@ -29,79 +26,87 @@ if (isset($_POST['btn_upload'])) {
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
+  <!-- Required meta tags 
+  ===================================================================================================-->
+  <title></title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <META NAME="robots" CONTENT="noindex,onfollow">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="../css/style.css">
-  <title>Hello, world!</title>
-</head>
-
-<body class="d-flex flex-column">
+  <!-- END Required meta tags 
+  ===================================================================================================-->
 
   <?php
-  include('../components/navbaradmin.php');
-  ?>
-  <hr>
-  <br>
+    include '../components/head/head.php'
+    ?>
 
+    
+</head>
+
+<body>
+  <!-- Navigation
+  ===================================================================================================-->
+  <?php
+  include '../components/navbaradmin.php'
+  ?>
+
+  <br>
+  <!-- END Navigation
+  ===================================================================================================-->
+  <br style="height: 500px">
+  <hr>
   <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
-        <h1 class="font-weight-light"> อัพโหลดรูปภาพ</h1>
-
-
-
+        <h1 class="font-weight-light"></h1>
 
         <form action="" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">เลือกรูปภาพ/วีดีโอ</label>
+            <label for=" " class="col-sm-2 col-form-label" >เลือกภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <input type="file" name="file_img" required>
-            </div>
-
-
-          </div>
-
-          <div class="form-group row">
-            <label for=" " class="col-sm-2 col-form-label">ชื่อรูปภาพ/วีดีโอ</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control"  name="img_title" placeholder="Image-vdo name" required>
+              <div class="photo-field">
+                <input class="form-control"  type="file" name="file_img" required>
+              </div>
             </div>
           </div>
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">ประเภทภาพ/วีดีโอ</label>
+            <label for=" " class="col-sm-2 col-form-label">ชื่อ</label>
             <div class="col-sm-10">
-              <select name="typephoto" class="form-control" required>
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
+              <div class="title-field">
+                <input type="text" name="img_title" placeholder="Image name" required>
+              </div>
             </div>
-            
           </div>
+
           <div class="form-group row">
-            <div class="d-grid gap-2 col-6 mx-auto">
-              <button type="submit" value="Upload Image" class="btn btn-primary">อัพโหลด</button>
+            <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
+            <div class="col-sm-10">
+              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+              <datalist id="datalistOptions">
+                <option value="San Francisco">
+
+              </datalist>
+            </div>
+          </div>
+
+          <br>
+          <div class="form-group row">
+            <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
+            <div class="col-sm-10">
+              <input type="submit" value="Upload Image" name="btn_upload" class="btn btn-primary">
             </div>
           </div>
         </form>
-        <div style="height: 300px"></div>
+
       </div>
+      <div style="height: 200px"></div>
+
     </div>
   </div>
-
-
+  </div>
 
   <?php include '../components/footer.php' ?>
 
-
-
 </body>
-
 
 </html>

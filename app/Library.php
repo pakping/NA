@@ -9,22 +9,14 @@ include '../auth/Sessionpersist.php';
 ===================================================================================================-->
     <title>Hello, world!</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <META NAME="robots" CONTENT="noindex,onfollow">
  <!-- END Required meta tags 
 ===================================================================================================-->   
 
-<!-- Bootstrap CSS 
-===================================================================================================-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- END Bootstrap CSS 
-===================================================================================================-->
 
-<!--  CSS 
-===================================================================================================-->
-    <link rel="stylesheet" href="../css/style.css">
-<!-- END CSS 
-===================================================================================================-->
+<?php
+    include '../components/head/head.php'
+    ?>
     
 </head>
 
@@ -33,7 +25,7 @@ include '../auth/Sessionpersist.php';
 <!-- Navigation
 =================================================================================================== -->
     <?php
-    include('../components/navbar-2.php');
+    include('../components/navbar/navbar-2.php');
     ?>
 
  <!-- END Navigation
@@ -79,20 +71,23 @@ include '../auth/Sessionpersist.php';
 
 <!-- card แสดงรูปภาพ
  =================================================================================================-->
-            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="col-xl-4 col-md-6 mb-4">
 									<div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="...">
 										<div class="card-body text-center">
-											<h5 class="card-title"><?php echo $img['Tag']; ?></h5>
+											<h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
 											<form action= 'item.php' method= "POST">
 											<input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>"/>
-												<button type='submit'>humgee</button>
+                                            <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
 											</form>
 										</div>
 									</div>
 								</div>
                 <!-- /.row -->
             <?php
-            }}
+            }
+            }
+        
             ?>
         </div>
 

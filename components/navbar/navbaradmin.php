@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../app/home-admin.php">หน้าหลัก <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../app/home-admin.php">หน้าหลัก </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../app/upload-type.php">เพิ่มประเภทสินค้า</a>
