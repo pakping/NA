@@ -1,6 +1,6 @@
     <!-- mobile specific metas
 ===================================================================================================-->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <!--END mobile specific metas
 ===================================================================================================-->
 
@@ -13,6 +13,6 @@
 
     <!-- CSS STYLE ME
 ===================================================================================================-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!--END  CSS STYLE ME
 ===================================================================================================-->
