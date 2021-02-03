@@ -5,7 +5,7 @@ $filetmp = $_FILES['file_img']['tmp_name'];
 $filename = $_FILES['file_img']['name'];
 $filepath = '../img/' . $dir . '/' . $filename;
 $filetype = $_FILES['file_img']['type'];
-$filetitle = "Maintag";
+$filetitle = $_POST['newtitle'];
 /* $path = '../img/'. $dir; */
 if (isset($dir)){
     mkdir("../img/$dir");
@@ -17,7 +17,7 @@ if (isset($dir)){
                 VALUES ('$filename', '$filetype', '$filepath', '$filetitle')";
     mysqli_query($con,$query);
     move_uploaded_file($filetmp, $filepath);
-    /* header('location:../app/library.php') */;
+    header('location:../app/library.php');
 
 }
 ?>

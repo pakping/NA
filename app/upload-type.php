@@ -41,6 +41,14 @@ include '../auth/Sessionpersist.php';
 
           </div>
 
+
+          <div class="form-group row">
+            <label for=" " class="col-sm-2 col-form-label">ชื่อรูปปก</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="newtitle" placeholder=" namephoto">
+            </div>
+          </div>
+
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">ชื่อประเภท</label>
             <div class="col-sm-10">
