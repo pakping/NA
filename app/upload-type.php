@@ -10,7 +10,7 @@ include '../auth/Sessionpersist.php';
 
   <META NAME="robots" CONTENT="noindex,onfollow">
   <?php
-  include '../components/head/head.php'
+  include '../components/head/head.php';
   ?>
 
 
@@ -20,7 +20,7 @@ include '../auth/Sessionpersist.php';
 <body class="d-flex flex-column">
 
   <?php
-  include '../components/navbaradmin.php'
+  include '../components/navbar/navbaradmin.php';
   ?>
   <hr>
   <br>
@@ -30,7 +30,7 @@ include '../auth/Sessionpersist.php';
       <div class="card-body p-5">
         <h1 class="font-weight-light">สร้างประเภทสิ่งของ</h1>
         <br>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="../Function/Inserttag.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
             <label class="col-sm-2 col-form-label" class="form-label">เลือกรูปภาพ/วีดีโอ</label>
@@ -44,7 +44,7 @@ include '../auth/Sessionpersist.php';
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">ชื่อประเภท</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="namephoto" placeholder=" namephoto">
+              <input type="text" class="form-control" name="dir" placeholder=" namephoto">
             </div>
           </div>
 
@@ -52,7 +52,7 @@ include '../auth/Sessionpersist.php';
       </div>
       <div class="form-group row">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="btn btn-primary">สร้างประเภทสิ้นค้า</button>
+          <button type="submit" class="btn btn-primary">สร้างประเภทสินค้า</button>
         </div>
       </div>
       </form>

@@ -73,7 +73,7 @@ include '../auth/Sessionpersist.php';
  =================================================================================================-->
                                 <div class="col-xl-4 col-md-6 mb-4">
 									<div class="card border-0 shadow">
-                                    <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="...">
+                                    <img src="<?php echo $img['path'],"title";?>" class="card-img-top" alt="...">
 										<div class="card-body text-center">
 											<h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
 											<form action= 'item.php' method= "POST">
