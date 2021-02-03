@@ -45,7 +45,7 @@ if (isset($_POST['btn_upload'])) {
   <!-- Navigation
   ===================================================================================================-->
   <?php
-  include '../components/navbaradmin.php'
+  include '../components/navbar/navbaradmin.php'
   ?>
 
   <br>

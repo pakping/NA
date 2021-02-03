@@ -20,7 +20,7 @@ include '../auth/Sessionpersist.php';
 <body class="d-flex flex-column">
 
   <?php
-  include '../components/navbaradmin.php'
+  include '../components/navbar/navbaradmin.php'
   ?>
   <hr>
   <br>

@@ -29,7 +29,7 @@ include 'auth/Sessionpersist.php';
     <!-- Navbar
  ===================================================================================================-->
     <?php
-    include('components/navbar/navbar.php');
+    include 'components/navbar/navbar.php'
     ?>
     <!--END  Navbar
 ===================================================================================================-->
@@ -73,17 +73,17 @@ include 'auth/Sessionpersist.php';
 
     <!-- Pagae content-photo-library
 ===================================================================================================-->
-    <?php
-    include 'components/content.php'
-    ?>
+<?php
+  include 'components/content/content.php'
+  ?>
     <!--END  Pagae content-photo-library
 ===================================================================================================-->
 
     <!-- start footer 
 ===================================================================================================-->
-    <?php
-    include('./components/footer.php')
-    ?>
+<?php
+  include 'components/footer.php'
+  ?>
     <!--END start footer 
 ===================================================================================================-->
 </body>
