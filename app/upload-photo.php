@@ -42,7 +42,7 @@ if (isset($_POST['btn_upload'])) {
   ===================================================================================================-->
 
   <?php
-    /* include '../components/head/head.php' */
+    include '../components/head/head.php'
     ?>
 
     
@@ -52,7 +52,7 @@ if (isset($_POST['btn_upload'])) {
   <!-- Navigation
   ===================================================================================================-->
   <?php
-  /* include '../components/navbar/navbaradmin.php' */
+  include '../components/navbar/navbaradmin.php'
   ?>
 
   <br>
