@@ -14,7 +14,7 @@ include '../auth/Sessionpersist.php';
   ?>
 
 
-  <title>Hello, world!</title>
+  <title>New Tag</title>
 </head>
 
 <body class="d-flex flex-column">
@@ -35,7 +35,7 @@ include '../auth/Sessionpersist.php';
           <div class="form-group row">
             <label class="col-sm-2 col-form-label" class="form-label">เลือกรูปภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <input type="file" name="file_img-vdo" required>
+              <input type="file" name="file_img" required>
             </div>
 
 

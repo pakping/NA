@@ -4,21 +4,28 @@ if (isset($_POST['btn_upload'])) {
   $filetmp = $_FILES['file_img']['tmp_name'];
   $filename = $_FILES['file_img']['name'];
   $filetype = $_FILES['file_img']['type'];
-  $filepath = 'img/' . $filename;
+  $tag = $_POST['inputtag'];
+  $filepath = '../img/'.$tag . '/' . $filename;
   $filetitle = $_POST['img_title'];
-
-  move_uploaded_file($filetmp, $filepath);
-  $query = "INSERT INTO tbl_photos (img_name, img_type,img_path, img_title)
-                    VALUES (?, ?, ?, ?)";
-  $stmt = mysqli_prepare($con, $query);
-  mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
-
-  if (mysqli_stmt_execute($stmt)) {
-    header("Location: ");
-  } else {
-    echo "Something went wrong!";
+  
+   
+    $query = "INSERT INTO $tag (img_name, img_type,img_path, img_title)
+                      VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($con, $query);
+    if ($stmt == true){
+      mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
+      move_uploaded_file($filetmp, $filepath);
+    if (mysqli_stmt_execute($stmt)) {
+      header("Location: ");
+    } else {
+      echo "Something went wrong!";
+  }}else{
+    "<script>alert('ไม่มีประเภทดังกล่าว โปรดเลือกใหม่')<script>";
   }
+
+  
 }
+
 
 ?>
 
@@ -35,7 +42,7 @@ if (isset($_POST['btn_upload'])) {
   ===================================================================================================-->
 
   <?php
-    include '../components/head/head.php'
+    /* include '../components/head/head.php' */
     ?>
 
     
@@ -45,7 +52,7 @@ if (isset($_POST['btn_upload'])) {
   <!-- Navigation
   ===================================================================================================-->
   <?php
-  include '../components/navbar/navbaradmin.php'
+  /* include '../components/navbar/navbaradmin.php' */
   ?>
 
   <br>
@@ -81,7 +88,7 @@ if (isset($_POST['btn_upload'])) {
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
             <div class="col-sm-10">
-              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+              <input class="form-control" list="datalistOptions" id="exampleDataList" name="inputtag" placeholder="Type to search...">
               <datalist id="datalistOptions">
                 <option value="San Francisco">
 
