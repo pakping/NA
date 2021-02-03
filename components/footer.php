@@ -1,8 +1,8 @@
 
-
-<footer  id="sticky-footer"  class="p-3 bg-light text-white-90" style="height: 100px;" >
-    <div class="container">
+<footer id="sticky-footer" class=" shadow-sm p-3 bg-light text-white-90 " style="height: 100px;">
+    <div class="container ">
         <div>
+
             <div class="float-right">
             <div>
                 <p>ติดต่อเรา</p>
@@ -25,21 +25,17 @@
                 </a>
             </div>
             
-            
-           
+    
         </div>
     </div>
 </footer>
 
 
-<footer  id="sticky-footer"  class="p-3 bg-light text-white-90" style="height: 100px;" >
-    <div class="container">
-        <div>
-            <!-- <p class="float-right"><a href="#">กลับไปหน้าบน</a></p> -->
-            <p>&copy; ห้ามนำข้อมูลไปเผยแพร่ก่อนได้รับอนุญาต &middot;</p>
-            </small>
-        </div>
-    </div>
+
+<footer class="footer mt-auto py-3 bg-light ">
+  <div class="container">
+    <span class="text-muted">&copy; ห้ามนำข้อมูลไปเผยแพร่ก่อนได้รับอนุญาต &middot;</span>
+  </div>
 </footer>
 
 
@@ -47,6 +43,3 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-<!-- <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script> -->
