@@ -1,4 +1,5 @@
 <?php
+$content = 'everyone';
 include '../auth/Sessionpersist.php';
 ?>
 <!doctype html>
