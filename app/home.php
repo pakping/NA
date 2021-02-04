@@ -1,7 +1,10 @@
-<<<<<<< HEAD
  <!-- Check Sessionpersist
 ===================================================================================================-->
-
+<?php
+  $content = 'everyone';
+  $_SESSION['lastpage'] = '../app/home.php';
+  include '../auth/Sessionpersist.php';
+  ?>
  <!--END  Check Sessionpersist
 ===================================================================================================-->
 
@@ -19,12 +22,12 @@
    <!-- END Required meta tags
 ===================================================================================================-->
    <?php
-    include 'components/head/head.php'
+    include '../components/head/head.php'
     ?>
 
    <!-- CSS
 ===================================================================================================-->
-<link rel="stylesheet" href="css/style-navbar.css">
+   <link rel="stylesheet" href="css/style.css">
    <!-- CSS
 ===================================================================================================-->
    <style>
@@ -59,7 +62,7 @@ section {padding:2rem;}
  ===================================================================================================-->
    <header>
      <?php
-      include 'components/navbar/navbar.php'
+      include '../components/navbar/navbar.php'
       ?>
    </header>
    <!--END  Navbar
@@ -135,7 +138,7 @@ section {padding:2rem;}
 ===================================================================================================-->
 
      <?php
-      include 'components/content/content.php'
+      include '../components/content/content.php'
       ?>
      <!--END  Pagae content-photo-library
 ===================================================================================================-->
@@ -159,7 +162,7 @@ section {padding:2rem;}
      <!-- start footer 
 ===================================================================================================-->
      <?php
-      include 'components/footer.php'
+      include '../components/footer.php'
       ?>
    </main>
    <!--END start footer 
@@ -167,9 +170,3 @@ section {padding:2rem;}
  </body>
 
  </html>
-=======
-<?php
-session_start();
-header('location:app/home.php');
-?>
->>>>>>> e3a8d6e5e663e03dcb826c674bba6aeabc45efda
