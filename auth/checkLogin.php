@@ -24,12 +24,12 @@ if (!$objResult) {
 		$query = mysqli_query($con, $sql);
 		//*** Session
 		$_SESSION["Username"] = $objResult["Username"];
-		if ($objResult["Access"] == "user") {
-			$_SESSION['type'] = 'user';
-			header("location:../index.php");
-		} elseif ($objResult["Access"] == "admin") {
+		if ($objResult["Access"] == "admin") {
 			$_SESSION['type'] = 'admin';
-			header("location:../index.php");
+			header("location:../app/library.php");
+		} elseif ($objResult["Access"] == "officer") {
+			$_SESSION['type'] = 'officer';
+			header("location:../admin/admin-index.php");
 		}
 	}
 }

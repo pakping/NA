@@ -19,9 +19,21 @@
         <a class="nav-link" href="app/about.php">เกี่ยวกับเรา</a>
         </li>
       </ul>
+<<<<<<< HEAD
       <ul class ="navbar-nav ml-auto">
       <button  class="btn" >เข้าสู่ระบบ</button>
       </ul>
+=======
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="app/login.php">เข้าสู่ระบบ</a>
+                </li>
+            </ul>
+>>>>>>> 1d3adb5949620c6a71361667bdf6521bc7118900
     </div>
   </div>
 </nav>
