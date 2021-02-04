@@ -1,3 +1,6 @@
+<?php
+include '../auth/Sessionpersist.php';
+?>
 <!doctype html>
 <html lang="en">
 
