@@ -59,7 +59,7 @@ include '../auth/Sessionpersist.php';
 
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">ชื่อ</label>
-            <select name="room" class="form-select" aria-label="Default select example" required>
+            <select name="inputtag" class="form-select" aria-label="Default select example" required>
               <option selected value="">โปรดเลือก...</option>
               <?php require '../db/connect.php';
               $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
