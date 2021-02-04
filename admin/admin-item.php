@@ -18,23 +18,22 @@
      <!-- Required meta tags 
 ===================================================================================================-->
 
-     <?php
-        include '../components/head/head.php'
-        ?>
+<?php
+    include '../components/head/head.php'
+ ?>
 
 
 
      <!-- CSS
 ===================================================================================================-->
-
+  
      <style>
-         .card-1 {
-             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-         }
-
-         .card-1:hover {
-             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      
+         .card-img-top {
+             max-height: 20vh;
+             /*not want to take all vertical space*/
+             object-fit: contain;
+             /*show all image, autosized, no cut, in available space*/
          }
      </style>
      <!-- END CSS 
@@ -46,16 +45,13 @@
 
      <!-- navbar
 ===================================================================================================-->
-<header>
-<?php
+     <?php
         include('../components/navbar/navbar-2.php');
         ?>
-</header>
-     
      <!-- END navbar 
 ===================================================================================================-->
-<main>
-     <br><br><br>
+
+     <hr><br><br><br>
 
      <!-- *** Page Content
 ===================================================================================================-->
@@ -63,7 +59,7 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-    <!--      <nav aria-label="breadcrumb">
+         <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
@@ -71,29 +67,28 @@
 
                  <li class="breadcrumb-item active" aria-current="page"> item</li>
              </ol>
-         </nav> -->
+         </nav>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-<!-- 
+
          <h1 class="my-4">Page Heading
              <small>Secondary Text</small>
          </h1>
          <div class="row">
- -->
+
 
 
              <!-- card showphoto
  ===================================================================================================-->
              <div class="container">
-                 <div class="row ">
+                 <div class="row g-2">
 
                      <!-- db code php conphoto
 ===================================================================================================-->
                      <?php
                         require "../db/connect.php";
                         $dir = $_POST['directory'];
-                        $_SESSION['tag'] = $dir;
                         $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
                         if ($result = mysqli_query($con, $Squery)) {
                             while ($img = mysqli_fetch_array($result)) {
@@ -104,21 +99,29 @@
 
                              <!-- Team photo 
 ===================================================================================================-->
-                             <div class="col-xl-4 col-md-6 mb-4">
-                                 <div class="card card card-1">
-                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?> " style="height: 200px; overflow: hidden;">
-                                         <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                             <div class="col-xl-3 col-md-6 mb-4">
+                                 <div class="card border-0 shadow">
+
+                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
+
+                                         <img  src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." >
                                      </a>
-                                     <div class="card-body">
+
+                                     <div class="card-body text-center">
                                          <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
-                                         <p>รายละเดียด</p>
-                                         <form action='../function/delete.php' method="POST">
-                                             <button class="btn btn-success">download
-                                                 <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
-                                                 </a></button>
+
+                                         <div class="card-text text-black-50"><?php echo "../", $img['img_name']; ?>
+                                         </div>
+
+                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
+                                             <button class="btn">download</button>
+                                         </a>
+
+                                         <form action='function/delete.php' method="POST">
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn btn-danger" type='submit'>delete</button>
+                                             <button class="btn" type='submit'>humgee</button>
                                          </form>
+
                                      </div>
                                  </div>
                              </div>
@@ -181,7 +184,7 @@
         ?>
      <!-- END footer 
 ===================================================================================================-->
-</main>
+
  </body>
 
  </html>
