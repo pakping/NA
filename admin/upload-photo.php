@@ -44,7 +44,7 @@ include '../auth/Sessionpersist.php';
             <label for=" " class="col-sm-2 col-form-label">เลือกภาพ/วีดีโอ</label>
             <div class="col-sm-10">
               <div class="photo-field">
-                <input class="form-control" type="file" name="file_img" required>
+                <input class="form-control" type="file" name="file_img" multiple accept="image/*,video/*" required>
               </div>
             </div>
           </div>

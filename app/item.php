@@ -47,15 +47,12 @@ include '../auth/Sessionpersist.php';
 
      <!-- navbar
 ===================================================================================================-->
-<header>
-<?php
+     <?php
         include('../components/navbar/navbar-2.php');
         ?>
-</header>
-     
      <!-- END navbar 
 ===================================================================================================-->
-<main>
+
      <br><br><br>
 
      <!-- *** Page Content
@@ -64,24 +61,12 @@ include '../auth/Sessionpersist.php';
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-    <!--      <nav aria-label="breadcrumb">
-             <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
-                 <li class="breadcrumb-item "><a href="Library.php">Library</a></li>
-
-                 <li class="breadcrumb-item active" aria-current="page"> item</li>
-             </ol>
-         </nav> -->
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-<!-- 
-         <h1 class="my-4">Page Heading
-             <small>Secondary Text</small>
-         </h1>
-         <div class="row">
- -->
+
+
 
 
              <!-- card showphoto
@@ -94,7 +79,10 @@ include '../auth/Sessionpersist.php';
                      <?php
                         require "../db/connect.php";
                         $dir = $_POST['directory'];
+<<<<<<< HEAD
+=======
                         $_SESSION['tag'] = $dir;
+>>>>>>> 1d3adb5949620c6a71361667bdf6521bc7118900
                         $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
                         if ($result = mysqli_query($con, $Squery)) {
                             while ($img = mysqli_fetch_array($result)) {
@@ -105,13 +93,35 @@ include '../auth/Sessionpersist.php';
 
                              <!-- Team photo 
 ===================================================================================================-->
+<<<<<<< HEAD
+                             <div class="col-xl-3 col-md-6 mb-4">
+                                 <div class="card border-0 shadow">
+
+                                     <a href="<?php echo "../", $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
+
+                                         <img  src="<?php echo "../", $img['img_path']; ?>" class="card-img-top" alt="..." >
+=======
                              <div class="col-xl-4 col-md-6 mb-4">
                                  <div class="card card card-1">
                                      <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?> " style="height: 200px; overflow: hidden;">
                                          <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+>>>>>>> 1d3adb5949620c6a71361667bdf6521bc7118900
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
+<<<<<<< HEAD
+
+                                         <div class="card-text text-black-50"><?php echo "../", $img['img_name']; ?>
+                                         </div>
+
+                                         <a href="<?php echo "../", $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
+                                             <button class="btn">download</button>
+                                         </a>
+
+                                         <form action='function/delete.php' method="POST">
+                                             <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
+                                             <button class="btn" type='submit'>humgee</button>
+=======
                                          <p>รายละเดียด</p>
                                          <form action='../function/delete.php' method="POST">
                                              <button class="btn btn-success">download
@@ -119,6 +129,7 @@ include '../auth/Sessionpersist.php';
                                                  </a></button>
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
                                              <button class="btn btn-danger" type='submit'>delete</button>
+>>>>>>> 1d3adb5949620c6a71361667bdf6521bc7118900
                                          </form>
                                      </div>
                                  </div>
@@ -140,33 +151,7 @@ include '../auth/Sessionpersist.php';
          <!--END card showphoto
 ===================================================================================================-->
 
-         <!-- Pagination  
-===================================================================================================-->
-         <ul class="pagination justify-content-center">
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Previous">
-                     <span aria-hidden="true">&laquo;</span>
-                     <span class="sr-only">Previous</span>
-                 </a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">1</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">2</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">3</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Next">
-                     <span aria-hidden="true">&raquo;</span>
-                     <span class="sr-only">Next</span>
-                 </a>
-             </li>
-         </ul>
-         <!-- END Pagination  
-===================================================================================================-->
+ 
 
      </div>
      <!-- container -->
@@ -182,7 +167,7 @@ include '../auth/Sessionpersist.php';
         ?>
      <!-- END footer 
 ===================================================================================================-->
-</main>
+
  </body>
 
  </html>
