@@ -25,7 +25,7 @@ if (isset($_SESSION['username'])){
                     <div class="card card-signin my-5  ">
                         <div class="card-body ">
                             <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก / The Na thailand</h5>
-                            <form class="form-signin" action="checklogin.php" method = "post">
+                            <form class="form-signin" action="../auth/checkLogin.php" method = "post">
                                 <div class="form-label-group my-4">
                                     <input type="text" id="inputEmail" name="uname" class="form-control" placeholder="Email address" required autofocus>
                                     <label for="inputEmail">อีเมล</label>

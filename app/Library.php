@@ -45,7 +45,7 @@ include '../auth/Sessionpersist.php';
     <!-- Navigation
 =================================================================================================== -->
     <?php
-    include ('../components/navbar/navbar-2.php');
+    include ('../components/navbar/navbar.php');
     ?>
 
     <!-- END Navigation
