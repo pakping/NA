@@ -1,5 +1,8 @@
 <?php
 include '../auth/Sessionpersist.php';
+if (isset($_SESSION['username'])){
+    header('location:../app/library.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

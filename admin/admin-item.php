@@ -1,6 +1,7 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
  <?php
+ $content = 'officer';
     include '../auth/Sessionpersist.php';
     ?>
  <!-- END Check Sessionpersist

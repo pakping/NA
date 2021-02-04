@@ -1,4 +1,5 @@
 <?php
+$content = "everyone";
 include '../auth/Sessionpersist.php';
 ?>
 <!doctype html>
@@ -62,7 +63,7 @@ include '../auth/Sessionpersist.php';
 <!-- Navigation
 =================================================================================================== -->
     <?php
-    include('../components/navbar/navbar-2.php');
+    include ('../components/navbar/navbar-2.php');
     ?>
 
  <!-- END Navigation
