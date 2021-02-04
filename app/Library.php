@@ -21,12 +21,19 @@ include '../auth/Sessionpersist.php';
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            border-radius: 50px;
         }
 
         .card-1:hover {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
 
+        .boximg {
+            height: 300px; 
+            overflow: hidden;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
     </style>
 
 </head>
@@ -36,7 +43,7 @@ include '../auth/Sessionpersist.php';
     <!-- Navigation
 =================================================================================================== -->
     <?php
-    include('../components/navbar/navbar-2.php');
+    // include('../components/navbar/navbar-2.php');
     ?>
 
     <!-- END Navigation
@@ -83,7 +90,7 @@ include '../auth/Sessionpersist.php';
 
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card card-1">
-                            <div style="height: 200px; overflow: hidden;">
+                            <div class="boximg" >
                                 <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="" style="width: 100%;">
                             </div>
                             <div class="card-body text-center">
