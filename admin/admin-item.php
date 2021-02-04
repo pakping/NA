@@ -45,16 +45,13 @@
 
      <!-- navbar
 ===================================================================================================-->
-<header>
-<?php
+     <?php
         include('../components/navbar/navbar-2.php');
         ?>
-</header>
-     
      <!-- END navbar 
 ===================================================================================================-->
-<main>
-     <br><br><br>
+
+     <hr><br><br><br>
 
      <!-- *** Page Content
 ===================================================================================================-->
@@ -62,7 +59,7 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-    <!--      <nav aria-label="breadcrumb">
+         <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
                  <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
@@ -70,16 +67,16 @@
 
                  <li class="breadcrumb-item active" aria-current="page"> item</li>
              </ol>
-         </nav> -->
+         </nav>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-<!-- 
+
          <h1 class="my-4">Page Heading
              <small>Secondary Text</small>
          </h1>
          <div class="row">
- -->
+
 
 
              <!-- card showphoto
@@ -92,7 +89,6 @@
                      <?php
                         require "../db/connect.php";
                         $dir = $_POST['directory'];
-                        $_SESSION['tag'] = $dir ;  
                         $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
                         if ($result = mysqli_query($con, $Squery)) {
                             while ($img = mysqli_fetch_array($result)) {
@@ -121,9 +117,9 @@
                                              <button class="btn">download</button>
                                          </a>
 
-                                         <form action='../function/delete.php' method="POST">
+                                         <form action='function/delete.php' method="POST">
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn" type='submit'>delete</button>
+                                             <button class="btn" type='submit'>humgee</button>
                                          </form>
 
                                      </div>
@@ -188,7 +184,7 @@
         ?>
      <!-- END footer 
 ===================================================================================================-->
-</main>
+
  </body>
 
  </html>
