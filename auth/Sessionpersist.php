@@ -14,7 +14,7 @@ if (isset($_SESSION)) {
         } 
         elseif ($_SESSION['type'] == 'guest') {
             if ($content != 'everyone'){
-            header("location:../index.php");
+            header("location:./index.php");
             }
         }
     }
