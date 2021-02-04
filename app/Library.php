@@ -37,7 +37,7 @@ include '../auth/Sessionpersist.php';
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.card-2 {
+/* .card-2 {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
@@ -51,7 +51,7 @@ include '../auth/Sessionpersist.php';
 
 .card-5 {
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-}
+} */
 
 </style>
     
@@ -67,12 +67,12 @@ include '../auth/Sessionpersist.php';
 
  <!-- END Navigation
 =================================================================================================== -->   
-<div class="card"></div>
+<!-- <div class="card"></div> -->
 <div class="card card-1"></div>
-<div class="card card-2"></div>
-<div class="card card-3"></div>
+<!-- <div class="card card-2"></div> -->
+<!-- <div class="card card-3"></div>
 <div class="card card-4"></div>
-<div class="card card-5"></div>
+<div class="card card-5"></div> -->
 
 <br><br><br>
 
