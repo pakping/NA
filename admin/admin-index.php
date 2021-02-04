@@ -1,4 +1,5 @@
 <?php
+$content = 'officer';
 include '../auth/Sessionpersist.php';
 ?>
 <!doctype html>

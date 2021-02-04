@@ -1,19 +1,22 @@
 <?php
 session_start();
 if (isset($_SESSION)) {
-    /* if ($_SESSION['type'] == 'admin') {
-        echo 'Admin', '&ensp;';
-        if ($content == 'user') {
-            header("location:../app/showdata.php");
+    if (!isset($_SESSION['type'])){
+        $_SESSION['type'] = "guest";
+    }
+    else{
+        if ($_SESSION['type'] == 'admin') {
         }
-    } */
-    //if user login we will check session and display user content
-    /* elseif ($_SESSION['type'] == 'user') {
-        echo 'User', '&ensp;';
-        if ($content == 'admin') {
-            header("location:../app/showdatauser.php");
+        elseif ($_SESSION['type'] == 'officer') {
+            if ($content == 'admin') {
+                header("location:../app/homeadmin.php");
+            }
+        } 
+        elseif ($_SESSION['type'] == 'guest') {
+            if ($content != 'everyone'){
+            header("location:../index.php");
+            }
         }
-    } else {
-        header("location:../index.php");
-    } */
+    }
+
 }

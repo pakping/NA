@@ -1,8 +1,9 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
  <?php
-    include '../auth/Sessionpersist.php';
-    ?>
+$content = 'everyone';
+include '../auth/Sessionpersist.php';
+?>
  <!-- END Check Sessionpersist
 ===================================================================================================-->
 
