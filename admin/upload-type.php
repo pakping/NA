@@ -13,7 +13,7 @@ include '../auth/Sessionpersist.php';
   <?php
   include '../components/head/head.php';
   ?>
-
+<link rel="stylesheet" href="../css/style-navbar.css">
 
   <title>New Tag</title>
 </head>

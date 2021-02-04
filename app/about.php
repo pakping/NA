@@ -17,6 +17,7 @@ include '../auth/Sessionpersist.php';
   <?php
     include '../components/head/head.php'
     ?>
+    <link rel="stylesheet" href="../css/style-navbar.css">
 
 </head>
 
@@ -29,10 +30,7 @@ include '../auth/Sessionpersist.php';
   ?>
   <!-- END navbar
   ===================================================================================================-->
-
-  <hr>
   <br>
-
   <!-- Page Content
   ===================================================================================================-->
   <div class="container">

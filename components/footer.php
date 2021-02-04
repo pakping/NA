@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="../../css/style-footer.css">
 <footer id="sticky-footer" class=" shadow-sm p-3 bg-light text-white-90 " style="height: 100px;">
     <div class="container ">
         <div>

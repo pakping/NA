@@ -18,6 +18,7 @@ include '../auth/Sessionpersist.php';
 <?php
     include '../components/head/head.php'
     ?>
+<link rel="stylesheet" href="../css/style-navbar.css">
 <style>
 .card {
   background: #fff;
