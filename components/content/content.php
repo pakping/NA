@@ -1,5 +1,7 @@
 <!-- Page Content -->
-<div class="container">
+<section class="content-info section-bg">
+        <div class="container">
+
   <div class="row">
     
 <!-- while แสดงรูปภาพ
@@ -21,7 +23,7 @@
 
 <!-- card แสดงรูปภาพ
  =================================================================================================-->
-                                <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="col-xl-4 col-md-6 mb-4">
 									<div class="card border-0 shadow">
                                     <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="...">
 										<div class="card-body text-center">
@@ -49,5 +51,4 @@
 
 </div>
 <!-- /.container -->
-
-<!--ที่เก็บรูป https://unsplash.com/ -->
+</section>

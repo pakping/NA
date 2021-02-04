@@ -102,9 +102,9 @@
                              <div class="col-xl-3 col-md-6 mb-4">
                                  <div class="card border-0 shadow">
 
-                                     <a href="<?php echo "../", $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
+                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
 
-                                         <img  src="<?php echo "../", $img['img_path']; ?>" class="card-img-top" alt="..." >
+                                         <img  src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." >
                                      </a>
 
                                      <div class="card-body text-center">
@@ -113,7 +113,7 @@
                                          <div class="card-text text-black-50"><?php echo "../", $img['img_name']; ?>
                                          </div>
 
-                                         <a href="<?php echo "../", $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
+                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
                                              <button class="btn">download</button>
                                          </a>
 

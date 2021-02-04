@@ -10,11 +10,11 @@ include '../auth/Sessionpersist.php';
 
   <META NAME="robots" CONTENT="noindex,onfollow">
   <?php
-  include '../components/head/head.php'
+  include '../components/head/head.php';
   ?>
 
 
-  <title>Hello, world!</title>
+  <title>New Tag</title>
 </head>
 
 <body class="d-flex flex-column">
@@ -30,21 +30,29 @@ include '../auth/Sessionpersist.php';
       <div class="card-body p-5">
         <h1 class="font-weight-light">สร้างประเภทสิ่งของ</h1>
         <br>
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="../Function/Inserttag.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
             <label class="col-sm-2 col-form-label" class="form-label">เลือกรูปภาพ/วีดีโอ</label>
             <div class="col-sm-10">
-              <input type="file" name="file_img-vdo" required>
+              <input type="file" name="file_img" required>
             </div>
 
 
           </div>
 
+
+          <div class="form-group row">
+            <label for=" " class="col-sm-2 col-form-label">ชื่อรูปปก</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="newtitle" placeholder=" namephoto">
+            </div>
+          </div>
+
           <div class="form-group row">
             <label for=" " class="col-sm-2 col-form-label">ชื่อประเภท</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="namephoto" placeholder=" namephoto">
+              <input type="text" class="form-control" name="dir" placeholder=" namephoto">
             </div>
           </div>
 
@@ -52,7 +60,7 @@ include '../auth/Sessionpersist.php';
       </div>
       <div class="form-group row">
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="btn btn-primary">สร้างประเภทสิ้นค้า</button>
+          <button type="submit" class="btn btn-primary">สร้างประเภทสินค้า</button>
         </div>
       </div>
       </form>

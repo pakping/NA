@@ -17,6 +17,43 @@ include '../auth/Sessionpersist.php';
 <?php
     include '../components/head/head.php'
     ?>
+<style>
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+</style>
     
 </head>
 
@@ -30,8 +67,15 @@ include '../auth/Sessionpersist.php';
 
  <!-- END Navigation
 =================================================================================================== -->   
+<div class="card"></div>
+<div class="card card-1"></div>
+<div class="card card-2"></div>
+<div class="card card-3"></div>
+<div class="card card-4"></div>
+<div class="card card-5"></div>
 
-<hr><br><br><br>
+<br><br><br>
+
 
 <!-- *** Page Content 
 =================================================================================================-->
@@ -71,9 +115,10 @@ include '../auth/Sessionpersist.php';
 
 <!-- card แสดงรูปภาพ
  =================================================================================================-->
+ 
                                 <div class="col-xl-4 col-md-6 mb-4">
 									<div class="card border-0 shadow">
-                                    <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="...">
+                                    <img src="<?php echo $img['path'];?>" class="card-img-top" alt="...">
 										<div class="card-body text-center">
 											<h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
 											<form action= 'item.php' method= "POST">
