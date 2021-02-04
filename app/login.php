@@ -1,4 +1,5 @@
 <?php
+$content='everyone';
 include '../auth/Sessionpersist.php';
 if (isset($_SESSION['username'])){
     header('location:../app/library.php');
