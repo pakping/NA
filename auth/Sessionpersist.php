@@ -6,10 +6,13 @@ if (isset($_SESSION)) {
     }
     else{
         if ($_SESSION['type'] == 'admin') {
+            if($content == 'everyone'){
+                header("location:../admin/admin-index.php");
+            }
         }
         elseif ($_SESSION['type'] == 'officer') {
-            if ($content == 'admin') {
-                header("location:../app/homeadmin.php");
+            if($content != 'officer'){
+                header("location:../admin/admin-index.php");
             }
         } 
         elseif ($_SESSION['type'] == 'guest') {

@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">The Na Thailand</a>
@@ -10,20 +9,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
-        <a class="nav-link" href="../admin/admin-index.php">หน้าหลัก</a>
+          <a class="nav-link" href="../admin/admin-index.php">หน้าหลัก</a>
         </li>
         <li class="nav-item">
-        <a  class="nav-link" class="link-primary" href="../admin/upload-type.php">เพิ่มประเภทสินค้า</a>
+          <a class="nav-link" class="link-primary" href="../admin/upload-type.php">เพิ่มประเภทสินค้า</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="../admin/upload-photo.php">เพิ่มรูปภาพ-วีดีโอ</a>
+          <a class="nav-link" href="../admin/upload-photo.php">เพิ่มรูปภาพ-วีดีโอ</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="../admin/admin-library.php">จัดการูปภาพ-วีดีโอ</a>
+          <a class="nav-link" href="../admin/admin-library.php">จัดการูปภาพ-วีดีโอ</a>
         </li>
       </ul>
-      <ul class ="navbar-nav ml-auto">
-      <button class="btn" >ออกจากระบบ</button>
+      <?php ?>
+      <ul class="navbar-nav ml-auto">
+        <form action="../auth/logout.php" method="post">
+          <button class="btn" type="submit">ออกจากระบบ</button>
+        </form>
       </ul>
     </div>
   </div>

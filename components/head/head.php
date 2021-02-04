@@ -16,3 +16,5 @@
    <!--  <link rel="stylesheet" href="../css/style.css"> -->
     <!--END  CSS STYLE ME
 ===================================================================================================-->
+<!-- boximge -->
+<link rel="stylesheet" href="../css/style-content.css">
