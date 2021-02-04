@@ -45,15 +45,12 @@
 
      <!-- navbar
 ===================================================================================================-->
-<header>
-<?php
+     <?php
         include('../components/navbar/navbar-2.php');
         ?>
-</header>
-     
      <!-- END navbar 
 ===================================================================================================-->
-<main>
+
      <br><br><br>
 
      <!-- *** Page Content
@@ -62,24 +59,12 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-    <!--      <nav aria-label="breadcrumb">
-             <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
-                 <li class="breadcrumb-item "><a href="Library.php">Library</a></li>
-
-                 <li class="breadcrumb-item active" aria-current="page"> item</li>
-             </ol>
-         </nav> -->
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-<!-- 
-         <h1 class="my-4">Page Heading
-             <small>Secondary Text</small>
-         </h1>
-         <div class="row">
- -->
+
+
 
 
              <!-- card showphoto
@@ -92,7 +77,6 @@
                      <?php
                         require "../db/connect.php";
                         $dir = $_POST['directory'];
-                        $_SESSION['tag'] = $dir ;  
                         $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
                         if ($result = mysqli_query($con, $Squery)) {
                             while ($img = mysqli_fetch_array($result)) {
@@ -106,9 +90,9 @@
                              <div class="col-xl-3 col-md-6 mb-4">
                                  <div class="card border-0 shadow">
 
-                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
+                                     <a href="<?php echo "../", $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
 
-                                         <img  src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." >
+                                         <img  src="<?php echo "../", $img['img_path']; ?>" class="card-img-top" alt="..." >
                                      </a>
 
                                      <div class="card-body text-center">
@@ -117,13 +101,13 @@
                                          <div class="card-text text-black-50"><?php echo "../", $img['img_name']; ?>
                                          </div>
 
-                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
+                                         <a href="<?php echo "../", $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
                                              <button class="btn">download</button>
                                          </a>
 
-                                         <form action='../function/delete.php' method="POST">
+                                         <form action='function/delete.php' method="POST">
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn" type='submit'>delete</button>
+                                             <button class="btn" type='submit'>humgee</button>
                                          </form>
 
                                      </div>
@@ -146,33 +130,7 @@
          <!--END card showphoto
 ===================================================================================================-->
 
-         <!-- Pagination  
-===================================================================================================-->
-         <ul class="pagination justify-content-center">
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Previous">
-                     <span aria-hidden="true">&laquo;</span>
-                     <span class="sr-only">Previous</span>
-                 </a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">1</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">2</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">3</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Next">
-                     <span aria-hidden="true">&raquo;</span>
-                     <span class="sr-only">Next</span>
-                 </a>
-             </li>
-         </ul>
-         <!-- END Pagination  
-===================================================================================================-->
+ 
 
      </div>
      <!-- container -->
@@ -188,7 +146,7 @@
         ?>
      <!-- END footer 
 ===================================================================================================-->
-</main>
+
  </body>
 
  </html>
