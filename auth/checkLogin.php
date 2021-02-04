@@ -26,7 +26,7 @@ if (!$objResult) {
 		$_SESSION["Username"] = $objResult["Username"];
 		if ($objResult["Access"] == "admin") {
 			$_SESSION['type'] = 'admin';
-			header("location:../app/library.php");
+			header("location:../admin/admin-index.php");
 		} elseif ($objResult["Access"] == "officer") {
 			$_SESSION['type'] = 'officer';
 			header("location:../admin/admin-index.php");

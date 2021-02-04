@@ -64,19 +64,12 @@ include '../auth/Sessionpersist.php';
 <!-- Navigation
 =================================================================================================== -->
     <?php
-    include('../components/navbar/navbar-2.php');
+    include('../components/navbar/navbaradmin.php');
     ?>
 
  <!-- END Navigation
 =================================================================================================== -->   
-<div class="card"></div>
-<div class="card card-1"></div>
-<div class="card card-2"></div>
-<div class="card card-3"></div>
-<div class="card card-4"></div>
-<div class="card card-5"></div>
-
-<br><br><br>
+<br><br>
 
 
 <!-- *** Page Content 
