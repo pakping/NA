@@ -9,7 +9,7 @@ if (isset($_SESSION)) {
         }
         elseif ($_SESSION['type'] == 'officer') {
             if ($content == 'admin') {
-                header("location:../app/homeadmin.php");
+                header("location:../admin/admin-index.php");
             }
         } 
         elseif ($_SESSION['type'] == 'guest') {
