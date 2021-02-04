@@ -1,34 +1,6 @@
 <?php
-require "../db/connect.php";
-if (isset($_POST['btn_upload'])) {
-  $filetmp = $_FILES['file_img']['tmp_name'];
-  $filename = $_FILES['file_img']['name'];
-  $filetype = $_FILES['file_img']['type'];
-  $tag = $_POST['inputtag'];
-  $filepath = '../img/'.$tag . '/' . $filename;
-  $filetitle = $_POST['img_title'];
-  
-   
-    $query = "INSERT INTO $tag (img_name, img_type,img_path, img_title)
-                      VALUES (?, ?, ?, ?)";
-    $stmt = mysqli_prepare($con, $query);
-    if ($stmt == true){
-      mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
-      move_uploaded_file($filetmp, $filepath);
-    if (mysqli_stmt_execute($stmt)) {
-      header("Location: ");
-    } else {
-      echo "Something went wrong!";
-  }}else{
-    "<script>alert('ไม่มีประเภทดังกล่าว โปรดเลือกใหม่')<script>";
-  }
-
-  
-}
-
-
+include '../auth/Sessionpersist.php';
 ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -42,17 +14,17 @@ if (isset($_POST['btn_upload'])) {
   ===================================================================================================-->
 
   <?php
-    include '../components/head/head.php'
-    ?>
+  include '../components/head/head.php'
+  ?>
 
-    
+
 </head>
 
 <body>
   <!-- Navigation
   ===================================================================================================-->
   <?php
-  include '../components/navbar/navbaradmin.php'
+  include '../components/navbar/navbaradmin.php';
   ?>
 
   <br>
@@ -65,13 +37,13 @@ if (isset($_POST['btn_upload'])) {
       <div class="card-body p-5">
         <h1 class="font-weight-light"></h1>
 
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="../Function/upload.php" method="post" enctype="multipart/form-data">
 
           <div class="form-group row">
-            <label for=" " class="col-sm-2 col-form-label" >เลือกภาพ/วีดีโอ</label>
+            <label for=" " class="col-sm-2 col-form-label">เลือกภาพ/วีดีโอ</label>
             <div class="col-sm-10">
               <div class="photo-field">
-                <input class="form-control"  type="file" name="file_img" required>
+                <input class="form-control" type="file" name="file_img" required>
               </div>
             </div>
           </div>
@@ -86,29 +58,38 @@ if (isset($_POST['btn_upload'])) {
           </div>
 
           <div class="form-group row">
-            <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
-            <div class="col-sm-10">
-              <input class="form-control" list="datalistOptions" id="exampleDataList" name="inputtag" placeholder="Type to search...">
-              <datalist id="datalistOptions">
-                <option value="San Francisco">
-
-              </datalist>
-            </div>
+            <label for=" " class="col-sm-2 col-form-label">ชื่อ</label>
+            <select name="room" class="form-select" aria-label="Default select example" required>
+              <option selected value="">โปรดเลือก...</option>
+              <?php require '../db/connect.php';
+              $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
+              if ($result = mysqli_query($con, $Squery)) {
+                $i = 1;
+                while ($tag = mysqli_fetch_array($result)) {
+              ?>
+                  <option value="<?php echo $tag['Tag']; ?>"><?php echo $i . ':' . $tag['Tag']; ?></option>
+              <?php
+                  $i = $i + 1;
+                }
+              }
+              ?>
+            </select>
           </div>
-
-          <br>
-          <div class="form-group row">
-            <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
-            <div class="col-sm-10">
-              <input type="submit" value="Upload Image" name="btn_upload" class="btn btn-primary">
-            </div>
-          </div>
-        </form>
-
       </div>
-      <div style="height: 200px"></div>
+
+      <br>
+      <div class="form-group row">
+        <label for=" " class="col-sm-2 col-form-label">เพิ่มเข้าประเภทสินค้า</label>
+        <div class="col-sm-10">
+          <input type="submit" value="Upload Image" name="btn_upload" class="btn btn-primary">
+        </div>
+      </div>
+      </form>
 
     </div>
+    <div style="height: 200px"></div>
+
+  </div>
   </div>
   </div>
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2021 at 10:29 AM
+-- Generation Time: Feb 04, 2021 at 05:10 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -24,27 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `humgee`
---
-
-CREATE TABLE `humgee` (
-  `img_id` int(11) NOT NULL,
-  `img_name` varchar(255) DEFAULT NULL,
-  `img_type` varchar(255) DEFAULT NULL,
-  `img_path` varchar(255) DEFAULT NULL,
-  `img_title` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `humgee`
---
-
-INSERT INTO `humgee` (`img_id`, `img_name`, `img_type`, `img_path`, `img_title`) VALUES
-(1, 'ersa (1) (1).png', 'image/png', '../img/HUMGEE/ersa (1) (1).png', 'G');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `rainbow`
 --
 
@@ -55,14 +34,6 @@ CREATE TABLE `rainbow` (
   `img_path` varchar(255) DEFAULT NULL,
   `img_title` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `rainbow`
---
-
-INSERT INTO `rainbow` (`img_id`, `img_name`, `img_type`, `img_path`, `img_title`) VALUES
-(1, '2020-12-26.png', 'image/png', '../img/rainbow/2020-12-26.png', 'Maintag'),
-(3, 'ersa (1) (1).png', 'image/png', '../img/rainbow/ersa (1) (1).png', 'Boy');
 
 -- --------------------------------------------------------
 
@@ -80,8 +51,31 @@ CREATE TABLE `tagmaster` (
 --
 
 INSERT INTO `tagmaster` (`Tag`, `path`) VALUES
-('HUMGEE', '../img/HUMGEE/ersa (1) (1).png'),
-('rainbow', '../img/rainbow/2020-12-26.png');
+('rainbow', '../cover/tem.jpg'),
+('test', '../cover/2020-12-26.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test`
+--
+
+CREATE TABLE `test` (
+  `img_id` int(11) NOT NULL,
+  `img_name` varchar(255) DEFAULT NULL,
+  `img_type` varchar(255) DEFAULT NULL,
+  `img_path` varchar(255) DEFAULT NULL,
+  `img_title` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `test`
+--
+
+INSERT INTO `test` (`img_id`, `img_name`, `img_type`, `img_path`, `img_title`) VALUES
+(5, 'tem.jpg', 'image/jpeg', '../img/test/tem.jpg', 'Yes'),
+(6, 'c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'image/jpeg', '../img/test/c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'aaaa'),
+(7, 'c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'image/jpeg', '../img/test/c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -102,18 +96,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Username`, `Password`, `Access`, `LoginStatus`, `LastUpdate`) VALUES
-('Jeerachon', '123456', 'user', 0, '2021-02-02 14:33:53'),
+('Jeerachon', '123456', 'user', 1, '2021-02-04 09:11:32'),
 ('Sirichai', '654321', 'admin', 0, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `humgee`
---
-ALTER TABLE `humgee`
-  ADD PRIMARY KEY (`img_id`);
 
 --
 -- Indexes for table `rainbow`
@@ -128,6 +116,12 @@ ALTER TABLE `tagmaster`
   ADD PRIMARY KEY (`Tag`);
 
 --
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`img_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -138,16 +132,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `humgee`
---
-ALTER TABLE `humgee`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT for table `rainbow`
 --
 ALTER TABLE `rainbow`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
