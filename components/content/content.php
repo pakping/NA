@@ -7,7 +7,7 @@
 <!-- while แสดงรูปภาพ
 ================================================================================================= -->
 <?php
-             require "./db/connect.php";
+             require "../db/connect.php";
              $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
              if ($result = mysqli_query($con, $Squery)) {
                  while ($img = mysqli_fetch_array($result)) {
