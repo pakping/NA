@@ -18,6 +18,7 @@ include '../auth/Sessionpersist.php';
     <?php
     include '../components/head/head.php'
     ?>
+    <link rel="stylesheet" href="../css/style-navbar.css">
     <style>
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
