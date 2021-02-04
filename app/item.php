@@ -92,6 +92,7 @@
                      <?php
                         require "../db/connect.php";
                         $dir = $_POST['directory'];
+                        $_SESSION['tag'] = $dir ;  
                         $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
                         if ($result = mysqli_query($con, $Squery)) {
                             while ($img = mysqli_fetch_array($result)) {
@@ -120,9 +121,9 @@
                                              <button class="btn">download</button>
                                          </a>
 
-                                         <form action='function/delete.php' method="POST">
+                                         <form action='../function/delete.php' method="POST">
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn" type='submit'>humgee</button>
+                                             <button class="btn" type='submit'>delete</button>
                                          </form>
 
                                      </div>

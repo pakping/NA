@@ -123,6 +123,7 @@ include '../auth/Sessionpersist.php';
 											<h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
 											<form action= 'item.php' method= "POST">
 											<input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>"/>
+                                            
                                             <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
 											</form>
 										</div>
