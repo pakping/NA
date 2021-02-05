@@ -95,12 +95,13 @@ include '../auth/Sessionpersist.php';
                                          <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
                                          <p>รายละเดียด</p>
                                          <form action='../function/delete.php' method="POST">
-                                             <button class="btn btn-success">download
-                                                 <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
-                                                 </a></button>
+                                             
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
                                              <button class="btn btn-danger" type='submit'>delete</button>
                                          </form>
+                                         <button class="btn btn-success">download
+                                                 <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
+                                            </a></button>
                                      </div>
                                  </div>
                              </div>
