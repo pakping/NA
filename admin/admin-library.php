@@ -83,6 +83,7 @@ include '../auth/Sessionpersist.php';
                                     <input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>" />
                                     <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
                                 </form>
+                                <button type="submit" class="btn btn-outline-danger btn-auto btn-block">Delete</button>
                             </div>
                         </div>
                     </div>

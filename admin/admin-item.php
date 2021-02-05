@@ -1,7 +1,7 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
  <?php
- $content = 'officer';
+    $content = 'officer';
     include '../auth/Sessionpersist.php';
     ?>
  <!-- END Check Sessionpersist
@@ -19,17 +19,16 @@
      <!-- Required meta tags 
 ===================================================================================================-->
 
-<?php
-    include '../components/head/head.php'
- ?>
+     <?php
+        include '../components/head/head.php'
+        ?>
 
 
 
      <!-- CSS
 ===================================================================================================-->
-<link rel="stylesheet" href="../css/style-navbar.css">
+     <link rel="stylesheet" href="../css/style-navbar.css">
      <style>
-      
          .card-img-top {
              max-height: 20vh;
              /*not want to take all vertical space*/
@@ -101,11 +100,10 @@
                              <!-- Team photo 
 ===================================================================================================-->
                              <div class="col-xl-3 col-md-6 mb-4">
-                                 <div class="card border-0 shadow">
-
+                                 <div class="card card-1">
+                                     <div class="imge"></div>
                                      <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
-
-                                         <img  src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." >
+                                         <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="...">
                                      </a>
 
                                      <div class="card-body text-center">
@@ -120,7 +118,7 @@
 
                                          <form action='function/delete.php' method="POST">
                                              <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn" type='submit'>humgee</button>
+                                             <button class="btn" type='submit'>delete</button>
                                          </form>
 
                                      </div>
