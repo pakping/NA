@@ -69,7 +69,8 @@ include '../auth/Sessionpersist.php';
         <!--END Page Heading 
 =================================================================================================-->
 
-        <h1 class="my-4">Base
+        <h1 class="my-4">
+            Base
             <!-- <small> xt</small> -->
         </h1>
         <div class="row">
@@ -93,18 +94,36 @@ include '../auth/Sessionpersist.php';
                     <!-- card แสดงรูปภาพ
  =================================================================================================-->
 
-                    <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="card card-1">
                             <div class="boximg">
                                 <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
                             </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
-                                <form action='item.php' method="POST">
-                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
-                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
-                                    <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
-                                </form>
+                            <div class="card-body">
+                                <h5 class="card-title">โฟลเดอร์ <?php echo $img['dirname']; ?></h5>
+                                <br>
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <form action='item.php' method="POST">
+                                            <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
+                                            <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                            <div class="d-grid gap-2">
+                                                <button type="submit" class="btn btn-primary p-2">
+                                                    <ion-icon name="folder-open-outline"></ion-icon> More
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col">
+                                        <form action="" method="post">
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-secondary p-2">
+                                                <ion-icon name="arrow-down-circle-outline"></ion-icon> Download
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

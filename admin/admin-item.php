@@ -1,6 +1,6 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
-<?php
+ <?php
     $content = 'officer';
     include '../auth/Sessionpersist.php';
     ?>
@@ -49,17 +49,17 @@
 ===================================================================================================-->
      <?php
         include '../components/navbar/navbaradmin.php';
-        if (isset($_POST['path'])){
+        if (isset($_POST['path'])) {
             $path = $_POST['path'];
             $_SESSION['path'] = $path;
-        }else{
+        } else {
             $path  =  $_SESSION['path'];
         }
 
-        if (isset($_POST['directory'])){
+        if (isset($_POST['directory'])) {
             $dir = $_POST['directory'];
             $_SESSION['dir'] = $dir;
-        }else{
+        } else {
             $dir = $_SESSION['dir'];
         }
         ?>
@@ -87,59 +87,56 @@
 ===================================================================================================-->
                  <?php
                     require "../db/connect.php";
-                    
+
                     $Squery = "SELECT * FROM $dir ORDER BY dirname DESC";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
-                            if ($img['type']=='folder'){
-                            ?>
-                                <div class="col-xl-4 col-md-6 mb-4">
-                        <div class="card card-1">
-                            <div class="boximg">
-                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
-                                <form action='admin-item.php' method="POST">
-                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
-                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
-                                    <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                        <?php 
-                        }elseif  ($img['type']=='file'){
-                         ?>
-                         <div class="col-xl-4 col-md-6 mb-4">
-                             <div class="card card-1">
-                                 <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
-                                     <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
-                                 </a>
-                                 <div class="card-body">
-                                     <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
-                                     <p>รายละเอียด</p>
-                                     <form action='../function/delete.php' method="POST">
-                                         <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
-                                         <button class="btn btn-danger" type='submit'>delete</button>
-                                     </form>
-                                     <button class="btn btn-success">download
-                                         <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
-                                     </button>
+                            if ($img['type'] == 'folder') {
+                    ?>
+                             <div class="col-xl-4 col-md-6 mb-4">
+                                 <div class="card card-1">
+                                     <div class="boximg">
+                                         <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
+                                     </div>
+                                     <div class="card-body text-center">
+                                         <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                         <form action='admin-item.php' method="POST">
+                                             <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
+                                             <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                             <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
+                                         </form>
+                                     </div>
                                  </div>
                              </div>
-                         </div>
-
-
-
-                         <!--END Team photo 
+                         <?php
+                            } elseif ($img['type'] == 'file') {
+                            ?>
+                             <div class="col-xl-4 col-md-6 mb-4">
+                                 <div class="card card-1">
+                                     <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
+                                         <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                     </a>
+                                     <div class="card-body">
+                                         <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                         <p>รายละเอียด</p>
+                                         <form action='../function/delete.php' method="POST">
+                                             <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                             <button class="btn btn-danger" type='submit'>delete</button>
+                                         </form>
+                                         <button class="btn btn-success">download
+                                             <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
+                                         </button>
+                                     </div>
+                                 </div>
+                             </div>
+                             <!--END Team photo 
  ===================================================================================================-->
-
                  <?php
+                            }
                         }
-                        }
+                        //button add file and folder 
                     }
+                    include('../components/add/additem.php');
                     ?>
 
              </div>

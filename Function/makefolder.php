@@ -13,7 +13,7 @@ if (!file_exists($newpath)){
     $newpath = $newpath . '/';
     $query2 = "INSERT INTO $cdir (dirname,path,type) value('$dir','$newpath','folder')";
     mysqli_query($con,$query2);
-    echo '<script>alert("Update Complete!")
+    echo '<script>alert("Make folder Complete!")
     window.location.href ="../admin/admin-library.php"</script>';
 
 }
