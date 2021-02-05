@@ -27,15 +27,19 @@ ul {
 
 .navbar {
     background: white;
-    padding: 1.5rem 1.5rem;
-    ;
+    /*  padding: 0.5rem 1rem; */
     min-height: 12vh;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
 }
 
 .navbar .navbar-brand a {
     padding: 1rem 0;
     display: block;
     text-decoration: none;
+}
+
+.navbar-light .navbar-brand {
+    color: #1e55a5;
 }
 
 .navbar-brand {
@@ -100,4 +104,63 @@ ul {
 
 .navbar-nav .btn:hover {
     background-color: #0a3d62;
+}
+
+header {
+    background: url('img/banner.jpg') no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    height: 500px;
+}
+
+.features-icons {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.features-icons-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #0080ff;
+}
+
+.showcase-img {
+    background-size: cover;
+    min-height: 30rem;
+}
+
+.showcase-text {
+    padding: 8rem;
+}
+
+.testimonials {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.testimonials .testimonials-item img {
+    max-width: 12rem;
+    box-shadow: 0 5px 5px #adb5bd;
+}
+
+.call-to-action {
+    background: url("img/banner.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+footer {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .showcase-text {
+        padding: 4rem;
+    }
+    .showcase-img {
+        min-height: 15rem;
+    }
 }
