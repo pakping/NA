@@ -23,7 +23,7 @@ include '../auth/Sessionpersist.php';
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-            border-radius: 50px;
+            border-radius: 10px;
         }
 
         .card-1:hover {
@@ -31,10 +31,10 @@ include '../auth/Sessionpersist.php';
         }
 
         .boximg {
-            height: 300px; 
+            height: 200px;
             overflow: hidden;
-            border-top-left-radius: 50px;
-            border-top-right-radius: 50px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
     </style>
 
@@ -45,7 +45,7 @@ include '../auth/Sessionpersist.php';
     <!-- Navigation
 =================================================================================================== -->
     <?php
-    include ('../components/navbar/navbar.php');
+    include('../components/navbar/navbar.php');
     ?>
 
     <!-- END Navigation
@@ -92,26 +92,32 @@ include '../auth/Sessionpersist.php';
  =================================================================================================-->
 
                     <div class="col-xl-4 col-md-6 mb-4">
-                        <div class="card card card-1">
-                            <div class="boximg" >
+                        <div class="card card-1">
+                            <div class="boximg">
                                 <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="" style="width: 100%;">
                             </div>
                             <div class="card-body text-center">
                                 <h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
                                 <form action='item.php' method="POST">
                                     <input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>" />
-
                                     <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
                                 </form>
                             </div>
                         </div>
                     </div>
+
+
                     <!-- /.row -->
             <?php
                 }
             }
 
             ?>
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card card-1">
+                    <button>upload</button>
+                </div>
+            </div>
         </div>
 
         <!-- card แสดงรูปภาพ
@@ -150,7 +156,6 @@ include '../auth/Sessionpersist.php';
 
     <!--***END  Page Content 
 =================================================================================================-->
-
     <!-- Footer 
 =================================================================================================-->
     <?php

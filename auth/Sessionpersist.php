@@ -6,6 +6,9 @@ if (isset($_SESSION)) {
     }
     else{
         if ($_SESSION['type'] == 'admin') {
+            if($content == 'everyone'){
+                header("location:../admin/admin-index.php");
+            }
         }
         elseif ($_SESSION['type'] == 'officer') {
             if ($content == 'admin') {

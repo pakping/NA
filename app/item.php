@@ -1,9 +1,9 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
  <?php
-$content = 'everyone';
-include '../auth/Sessionpersist.php';
-?>
+    $content = 'everyone';
+    include '../auth/Sessionpersist.php';
+    ?>
  <!-- END Check Sessionpersist
 ===================================================================================================-->
 
@@ -27,7 +27,7 @@ include '../auth/Sessionpersist.php';
 
      <!-- CSS
 ===================================================================================================-->
-<link rel="stylesheet" href="../css/style-navbar.css">
+     <link rel="stylesheet" href="../css/style-navbar.css">
      <style>
          .card-1 {
              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -48,7 +48,7 @@ include '../auth/Sessionpersist.php';
      <!-- navbar
 ===================================================================================================-->
      <?php
-        include '../components/navbar/navbar-2.php'
+        include '../components/navbar/navbar.php'
         ?>
      <!-- END navbar 
 ===================================================================================================-->
@@ -65,74 +65,70 @@ include '../auth/Sessionpersist.php';
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-
-
-
-
-             <!-- card showphoto
+         <!-- card showphoto
  ===================================================================================================-->
-             <div class="container">
-                 <div class="row ">
+         <div class="container">
+             <div class="row ">
 
-                     <!-- db code php conphoto
+                 <!-- db code php conphoto
 ===================================================================================================-->
-                     <?php
-                        require "../db/connect.php";
-                        $dir = $_POST['directory'];
-                        $_SESSION['tag'] = $dir;
-                        $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
-                        if ($result = mysqli_query($con, $Squery)) {
-                            while ($img = mysqli_fetch_array($result)) {
+                 <?php
+                    require "../db/connect.php";
+                    $dir = $_POST['directory'];
+                    $_SESSION['tag'] = $dir;
+                    $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
+                    if ($result = mysqli_query($con, $Squery)) {
+                        while ($img = mysqli_fetch_array($result)) {
 
-                        ?>
-                             <!-- END db code php conphoto
+                    ?>
+                         <!-- END db code php conphoto
 ===================================================================================================-->
 
-                             <!-- Team photo 
+                         <!-- Team photo 
 ===================================================================================================-->
-                             <div class="col-xl-4 col-md-6 mb-4">
-                                 <div class="card card card-1">
-                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?> " style="height: 200px; overflow: hidden;">
-                                         <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
-                                     </a>
-                                     <div class="card-body">
-                                         <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
-                                         <p>รายละเดียด</p>
-                                         <form action='../function/delete.php' method="POST">
-                                             <button class="btn btn-success">download
-                                                 <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
-                                                 </a></button>
-                                             <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn btn-danger" type='submit'>delete</button>
-                                         </form>
-                                     </div>
+                         <div class="col-xl-4 col-md-6 mb-4">
+                             <div class="card card-1">
+                                 <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?> " style="height: 200px; overflow: hidden;">
+                                     <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                 </a>
+                                 <div class="card-body">
+                                     <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
+                                     <p>รายละเอียด</p>
+                                     <form action='../function/delete.php' method="POST">
+                                         <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
+                                         <button class="btn btn-danger" type='submit'>delete</button>
+                                     </form>
+                                     <button class="btn btn-success">download
+                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>"></a>
+                                     </button>
                                  </div>
                              </div>
-                             <!--END Team photo 
+                         </div>
+                         <!--END Team photo 
  ===================================================================================================-->
 
-                     <?php
-                            }
+                 <?php
                         }
-                        ?>
+                    }
+                    ?>
 
-                 </div>
-                 <!-- /.row -->
              </div>
-             <!-- /.container -->
-
+             <!-- /.row -->
          </div>
-         <!--END card showphoto
+         <!-- /.container -->
+
+     </div>
+     <!--END card showphoto
 ===================================================================================================-->
 
- 
+
 
      </div>
      <!-- container -->
 
      <!--***END Page Content
 ===================================================================================================-->
-
+     <div style="height: 700px"></div>
 
      <!-- footer 
 ===================================================================================================-->

@@ -68,7 +68,7 @@ include '../auth/Sessionpersist.php';
    <!-- Content 
   ===================================================================================================-->
   <?php
-  include '../components/content/content-1.php'
+  include '../components/content/content.php'
   ?>
    <!-- END Content 
   ===================================================================================================-->

@@ -2,7 +2,7 @@
 session_start();
 
 require_once("../DB/connect.php");
-
+$page = $_SESSION["lastpage"];
 $strUsername = $_POST['uname'];
 $strPassword = $_POST['psw'];
 
@@ -11,12 +11,20 @@ $strSQL = "SELECT * FROM User WHERE Username = '" . $strUsername . "'
 $objQuery = mysqli_query($con, $strSQL);
 $objResult = mysqli_fetch_array($objQuery);
 if (!$objResult) {
-	echo "Username and Password Incorrect!";
-	header("location:../app/home.php");
+	// echo "Username and Password Incorrect!";
+	echo "<script type=\"text/javascript\">";
+	echo "alert(\"รหัสผ่านผิดกรุณากรอกรหัสผ่านใหม่\");";
+	echo "window.location.assign('$page')";
+	echo "</script>";
+	// header("location:../app/login.php");
 	exit();
 } else {
 	if ($objResult["LoginStatus"] == "1") {
-		echo "'" . $strUsername . "' Exists login!";
+		// echo "'" . $strUsername . "' Exists login!";
+		echo "<script type=\"text/javascript\">";
+		echo "alert(\"ผู้ใช้นี้กำลังใช้งานอยู่\");";
+		echo "window.location.assign('$page')";
+		echo "</script>";
 		exit();
 	} else {
 		//*** Update Status Login
