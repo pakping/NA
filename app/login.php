@@ -1,7 +1,7 @@
 <?php
-$content='everyone';
+$content = 'everyone';
 include '../auth/Sessionpersist.php';
-if (isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
     header('location:../app/library.php');
 }
 ?>
@@ -25,22 +25,22 @@ if (isset($_SESSION['username'])){
                     <div class="card card-signin my-5  ">
                         <div class="card-body ">
                             <h5 class="card-title text-center my-5">เข้าสู่ระบบด้วยบัญชีสมาชิก / The Na thailand</h5>
-                            <form class="form-signin" action="../auth/checkLogin.php" method = "post">
+                            <form class="form-signin" action="../auth/checkLogin.php" method="post">
                                 <div class="form-label-group my-4">
                                     <input type="text" id="inputEmail" name="uname" class="form-control" placeholder="Email address" required autofocus>
                                     <label for="inputEmail">อีเมล</label>
                                 </div>
 
                                 <div class="form-label-group  my-4">
-                                    <input type="password" id="inputPassword" name ="psw" class="form-control" placeholder="Password" required>
+                                    <input type="password" id="inputPassword" name="psw" class="form-control" placeholder="Password" required>
                                     <label for="inputPassword">รหัสผ่าน</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-3">
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                                 </div>
-                                <button class="btn btn-primary btn-block buttontt" type="submit" >เข้าสู่ระบบ</button>
-                                
+                                <button class="btn btn-primary btn-block buttontt" type="submit">เข้าสู่ระบบ</button>
+
                             </form>
                             <!-- <a href="">สมัครสมาชิก</a> -->
                         </div>

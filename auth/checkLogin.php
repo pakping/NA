@@ -12,7 +12,7 @@ $objQuery = mysqli_query($con, $strSQL);
 $objResult = mysqli_fetch_array($objQuery);
 if (!$objResult) {
 	echo "Username and Password Incorrect!";
-	header("location:../app/home.php");
+	header("location:../app/login.php");
 	exit();
 } else {
 	if ($objResult["LoginStatus"] == "1") {
