@@ -23,7 +23,7 @@ include '../auth/Sessionpersist.php';
   <?php
   include '../components/navbar/navbaradmin.php'
   ?>
-  <hr>
+  
   <br>
 
   <div class="container">

@@ -43,28 +43,9 @@
    <!--END  Navbar
    
 ===================================================================================================-->
-<header class="text-white text-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <h1 class="mb-5">Build the best landing page for your business or project with bootstrap 5!</h1>
-          </div>
-
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form action="">
-              <div class="row d-flex">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  
-                </div>
-                <div class="col-12 col-md-3">
-                 
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </header>
+<?php
+  include '../components/header.php'
+  ?>
 
 
    <main>
@@ -160,21 +141,21 @@
         <div class="row">
           <div class="col-lg-4">
             <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-              <img src="img/testimonials-1.jpg" class="img-fluid rounded-circle mb-3" alt="">
+              <img src="../css/img/testimonials-1.jpg" class="img-fluid rounded-circle mb-3" alt="">
               <h5>Margeret E.</h5>
               <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-              <img src="img/testimonials-2.jpg" class="img-fluid rounded-circle mb-3" alt="">
+              <img src="../css/img/testimonials-2.jpg" class="img-fluid rounded-circle mb-3" alt="">
               <h5>Fred S.</h5>
               <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-              <img src="img/testimonials-3.jpg" class="img-fluid rounded-circle mb-3" alt="">
+              <img src="../css/img/testimonials-3.jpg" class="img-fluid rounded-circle mb-3" alt="">
               <h5>Sarah W.</h5>
               <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
             </div>

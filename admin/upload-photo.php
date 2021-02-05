@@ -28,11 +28,11 @@ include '../auth/Sessionpersist.php';
   include '../components/navbar/navbaradmin.php';
   ?>
 
-  <br>
+ 
   <!-- END Navigation
   ===================================================================================================-->
   <br style="height: 500px">
-  <hr>
+
   <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
