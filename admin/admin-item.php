@@ -121,7 +121,7 @@
                                      <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                      <p>รายละเอียด</p>
                                      <form action='../function/delete.php' method="POST">
-                                         <input type='hidden' name='del' value=" <?php echo $img["dirname"] ?>" />
+                                         <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
                                          <button class="btn btn-danger" type='submit'>delete</button>
                                      </form>
                                      <button class="btn btn-success">download

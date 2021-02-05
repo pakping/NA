@@ -8,7 +8,7 @@ $cdir = $_SESSION['dir'];//ชื่อ directory ปัจจุบัน ค�
 $title = $_POST['newtitle'];
 $filetmp = $_FILES['file_img']['tmp_name'];
 $filename = $_FILES['file_img']['name'];
-$filepath = $path . '/' . $filename;
+$filepath = $path . $filename;
 $select ="SELECT * FROM $cdir Where dirname = '$filename'";
 $result = mysqli_query($con,$select);
 if (mysqli_num_rows($result)==0){
