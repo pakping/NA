@@ -27,24 +27,24 @@ include '../auth/Sessionpersist.php';
   <div class="container">
     <div class="card border-0 shadow p-3">
       <div class="card-body">
-        <h1 class="font-weight-light">สร้างประเภทสิ่งของ</h1>
+        <h1 class="font-weight-light">สร้างโฟลเดอร์ใหม่</h1>
         <br>
-        <form action="../Function/Inserttag.php" method="post" enctype="multipart/form-data">
+        <form action="../Function/makefolder.php" method="post" enctype="multipart/form-data">
           <div class="row">
             <div class="col-sm-8">
-              <div class="form-floating mb-3">
+              <!-- <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="newtitle" placeholder=" namephoto" required>
                 <label for="floatingInput">ชื่อปก</label>
-              </div>
+              </div> -->
               <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="dir" placeholder=" namephoto" required>
-                <label for="floatingInput">ชื่อประเภท</label>
+                <label for="floatingInput">ชื่อ</label>
               </div>
-              <div class="input-group mb-3">
+              <!-- <div class="input-group mb-3">
                 <input type="file" name="file_img" class="form-control" id="inputGroupFile02" required>
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
-              </div>
-              <button class="btn btn-primary">สร้างประเภทสินค้า</button>
+              </div> -->
+              <button class="btn btn-primary">สร้างโฟลเดอร์ใหม่</button>
             </div>
             <div class="col-sm-4">
               <div class="ratio ratio-16x9">

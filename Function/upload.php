@@ -1,35 +1,25 @@
 <?php
 session_start();
+
 require "../db/connect.php";
+$path =$_SESSION['path'];//path ค่าเริ่มต้นคือ ../img
+$cdir = $_SESSION['dir'];//ชื่อ directory ปัจจุบัน ค่าเริ่มต้นคือ base
+
+$title = $_POST['newtitle'];
 $filetmp = $_FILES['file_img']['tmp_name'];
 $filename = $_FILES['file_img']['name'];
-$filetype = $_FILES['file_img']['type'];
-$tag = $_POST['inputtag'];
-$filepath = '../img/'.$tag . '/' . $filename;
-$filetitle = $_POST['img_title'];
-$select ="SELECT * FROM tagmaster Where Tag = '$tag'";
+$filepath = $path . '/' . $filename;
+$select ="SELECT * FROM $cdir Where dirname = '$filename'";
 $result = mysqli_query($con,$select);
-if (mysqli_num_rows($result)==1){
-$query = "INSERT INTO $tag (img_name, img_type,img_path, img_title)
-            VALUES (?, ?, ?, ?)";
-$stmt = mysqli_prepare($con, $query);
-if ($stmt == true){
-    mysqli_stmt_bind_param($stmt, "ssss", $filename, $filetype, $filepath, $filetitle);
+if (mysqli_num_rows($result)==0){
+    $query = "INSERT INTO $cdir (dirname,path,type) VALUE ('$title','$filepath','file')";
+    mysqli_query($con,$query);
     move_uploaded_file($filetmp, $filepath);
-    if (mysqli_stmt_execute($stmt)) {
-        echo '<script>alert("Update Complete!")
-        window.location.href ="../app/library.php"</script>';  //แสดง alert box แล้วไปยังหน้า library หลังยืนยัน 
-    } else {
-        echo '<script>alert("fail!")
-        window.location.href ="../app/upload-photo.php"</script>';
-    }}
-    else{
-      echo '<script>alert("not go!")
-       window.location.href ="../app/upload-photo.php"</script>';
-    }
+    echo '<script>alert("Upload complete!")
+        window.location.href ="../admin/admin-library.php"</script>';
 }
-else{
-    '<script>alert("Tag not exist")
-    window.location.href ="../app/upload-photo.php"</script>';
-  }
+elseif (mysqli_num_rows($result)==1){
+    echo '<script>alert("This file is already exist")
+    window.location.href ="../admin/admin-library.php"</script>';
+}
 ?>

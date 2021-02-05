@@ -1,6 +1,6 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
- <?php
+<?php
     $content = 'officer';
     include '../auth/Sessionpersist.php';
     ?>
@@ -20,7 +20,7 @@
 ===================================================================================================-->
 
      <?php
-        include '../components/head/head.php'
+        include '../components/head/head.php';
         ?>
 
 
@@ -29,11 +29,13 @@
 ===================================================================================================-->
      <link rel="stylesheet" href="../css/style-navbar.css">
      <style>
-         .card-img-top {
-             max-height: 20vh;
-             /*not want to take all vertical space*/
-             object-fit: contain;
-             /*show all image, autosized, no cut, in available space*/
+         .card-1 {
+             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+         }
+
+         .card-1:hover {
+             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
          }
      </style>
      <!-- END CSS 
@@ -46,12 +48,25 @@
      <!-- navbar
 ===================================================================================================-->
      <?php
-        include('../components/navbar/navbaradmin.php');
+        include '../components/navbar/navbaradmin.php';
+        if (isset($_POST['path'])){
+            $path = $_POST['path'];
+            $_SESSION['path'] = $path;
+        }else{
+            $path  =  $_SESSION['path'];
+        }
+
+        if (isset($_POST['directory'])){
+            $dir = $_POST['directory'];
+            $_SESSION['dir'] = $dir;
+        }else{
+            $dir = $_SESSION['dir'];
+        }
         ?>
      <!-- END navbar 
 ===================================================================================================-->
 
-     <hr><br><br><br>
+     <br><br><br>
 
      <!-- *** Page Content
 ===================================================================================================-->
@@ -59,122 +74,91 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-         <nav aria-label="breadcrumb">
-             <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
-                 <li class="breadcrumb-item "><a href="Library.php">Library</a></li>
-
-                 <li class="breadcrumb-item active" aria-current="page"> item</li>
-             </ol>
-         </nav>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
-
-         <h1 class="my-4">Page Heading
-             <small>Secondary Text</small>
-         </h1>
-         <div class="row">
-
-
-
-             <!-- card showphoto
+         <!-- card showphoto
  ===================================================================================================-->
-             <div class="container">
-                 <div class="row">
+         <div class="container">
+             <div class="row ">
 
-                     <!-- db code php conphoto
+                 <!-- db code php conphoto
 ===================================================================================================-->
-                     <?php
-                        require "../db/connect.php";
-                        $dir = $_POST['directory'];
-                        $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
-                        if ($result = mysqli_query($con, $Squery)) {
-                            while ($img = mysqli_fetch_array($result)) {
+                 <?php
+                    require "../db/connect.php";
+                    
+                    $Squery = "SELECT * FROM $dir ORDER BY dirname DESC";
+                    if ($result = mysqli_query($con, $Squery)) {
+                        while ($img = mysqli_fetch_array($result)) {
+                            if ($img['type']=='folder'){
+                            ?>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card card-1">
+                            <div class="boximg">
+                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                <form action='admin-item.php' method="POST">
+                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
+                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                    <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
-                        ?>
-                             <!-- END db code php conphoto
-===================================================================================================-->
-
-                             <!-- Team photo 
-===================================================================================================-->
-                             <div class="col-xl-3 col-md-6 mb-4">
-                                 <div class="card card-1">
-                                     <div class="imge"></div>
-                                     <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?>">
-                                         <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="...">
-                                     </a>
-
-                                     <div class="card-body text-center">
-                                         <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
-
-                                         <div class="card-text text-black-50"><?php echo "../", $img['img_name']; ?>
-                                         </div>
-
-                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>">
-                                             <button class="btn">download</button>
-                                         </a>
-
-                                         <form action='function/delete.php' method="POST">
-                                             <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
-                                             <button class="btn" type='submit'>delete</button>
-                                         </form>
-
-                                     </div>
+                        <?php 
+                        }elseif  ($img['type']=='file'){
+                         ?>
+                         <div class="col-xl-4 col-md-6 mb-4">
+                             <div class="card card-1">
+                                 <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
+                                     <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                 </a>
+                                 <div class="card-body">
+                                     <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                     <p>รายละเอียด</p>
+                                     <form action='../function/delete.php' method="POST">
+                                         <input type='hidden' name='del' value=" <?php echo $img["dirname"] ?>" />
+                                         <button class="btn btn-danger" type='submit'>delete</button>
+                                     </form>
+                                     <button class="btn btn-success">download
+                                         <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
+                                     </button>
                                  </div>
                              </div>
-                             <!--END Team photo 
+                         </div>
+
+
+
+                         <!--END Team photo 
  ===================================================================================================-->
 
-                     <?php
-                            }
+                 <?php
                         }
-                        ?>
+                        }
+                    }
+                    ?>
 
-                 </div>
-                 <!-- /.row -->
              </div>
-             <!-- /.container -->
-
+             <!-- /.row -->
          </div>
-         <!--END card showphoto
+         <!-- /.container -->
+
+     </div>
+     <!--END card showphoto
 ===================================================================================================-->
 
-         <!-- Pagination  
-===================================================================================================-->
-         <ul class="pagination justify-content-center">
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Previous">
-                     <span aria-hidden="true">&laquo;</span>
-                     <span class="sr-only">Previous</span>
-                 </a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">1</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">2</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#">3</a>
-             </li>
-             <li class="page-item">
-                 <a class="page-link" href="#" aria-label="Next">
-                     <span aria-hidden="true">&raquo;</span>
-                     <span class="sr-only">Next</span>
-                 </a>
-             </li>
-         </ul>
-         <!-- END Pagination  
-===================================================================================================-->
+
 
      </div>
      <!-- container -->
 
      <!--***END Page Content
 ===================================================================================================-->
-
+     <div style="height: 700px"></div>
 
      <!-- footer 
 ===================================================================================================-->

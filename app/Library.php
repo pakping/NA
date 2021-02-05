@@ -69,8 +69,8 @@ include '../auth/Sessionpersist.php';
         <!--END Page Heading 
 =================================================================================================-->
 
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
+        <h1 class="my-4">Base
+            <!-- <small> xt</small> -->
         </h1>
         <div class="row">
 
@@ -78,8 +78,10 @@ include '../auth/Sessionpersist.php';
 ================================================================================================= -->
             <?php
             require "../db/connect.php";
-            $folder = $_POST['folder'];
-            $Squery = "SELECT * FROM $folder ORDER BY Tag DESC";
+            $_SESSION['path'] = '../img/';
+            $_SESSION['dir'] = 'base';
+            $folder = 'base';
+            $Squery = "SELECT * FROM $folder ORDER BY type DESC";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
 
@@ -94,12 +96,13 @@ include '../auth/Sessionpersist.php';
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card-1">
                             <div class="boximg">
-                                <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="" style="width: 100%;">
+                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
+                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                 <form action='item.php' method="POST">
-                                    <input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>" />
+                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
+                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
                                     <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
                                 </form>
                             </div>
@@ -113,11 +116,6 @@ include '../auth/Sessionpersist.php';
             }
 
             ?>
-            <div class="col-xl-4 col-md-6 mb-4">
-                <div class="card card-1">
-                    <button>upload</button>
-                </div>
-            </div>
         </div>
 
         <!-- card แสดงรูปภาพ

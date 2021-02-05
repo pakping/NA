@@ -48,22 +48,6 @@ include '../auth/Sessionpersist.php';
                 <input type="file" name="file_img" class="form-control" id="inputGroupFile02" name="file_img" multiple accept="image/*,video/*" required>
                 <label class="input-group-text" for="inputGroupFile02">Upload</label>
               </div>
-              <div>
-                <label for="exampleDataList" class="form-label">เลือกโฟลเดอร์รูป</label>
-                <select class="form-select" multiple aria-label="multiple select example">
-                  <option selected>Open this select menu</option>
-                  <?php require '../db/connect.php';
-                  $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
-                  if ($result = mysqli_query($con, $Squery)) {
-                    $i = 1;
-                    while ($tag = mysqli_fetch_array($result)) {
-                  ?>
-                      <option value="<?php echo $tag['Tag']; ?>"><?php echo $i . ':' . $tag['Tag']; ?></option>
-                  <?php
-                      $i = $i + 1;
-                    }
-                  }
-                  ?>
                 </select>
               </div>
               <br>

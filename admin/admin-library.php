@@ -1,5 +1,5 @@
 <?php
-$content = 'officer';
+$content = "officer";
 include '../auth/Sessionpersist.php';
 ?>
 <!doctype html>
@@ -19,6 +19,24 @@ include '../auth/Sessionpersist.php';
     include '../components/head/head.php'
     ?>
     <link rel="stylesheet" href="../css/style-navbar.css">
+    <style>
+        .card-1 {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            border-radius: 10px;
+        }
+
+        .card-1:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        .boximg {
+            height: 200px;
+            overflow: hidden;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
 
 </head>
 
@@ -32,7 +50,7 @@ include '../auth/Sessionpersist.php';
 
     <!-- END Navigation
 =================================================================================================== -->
-    <br><br>
+    <br>
 
 
     <!-- *** Page Content 
@@ -45,14 +63,14 @@ include '../auth/Sessionpersist.php';
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
 
-                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                <li class="breadcrumb-item active" aria-current="page"> Library</li>
             </ol>
         </nav>
         <!--END Page Heading 
 =================================================================================================-->
 
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
+        <h1 class="my-4">Base
+            <!-- <small> xt</small> -->
         </h1>
         <div class="row">
 
@@ -60,7 +78,10 @@ include '../auth/Sessionpersist.php';
 ================================================================================================= -->
             <?php
             require "../db/connect.php";
-            $Squery = "SELECT * FROM tagmaster ORDER BY Tag DESC";
+            $_SESSION['path'] = '../img/';
+            $_SESSION['dir'] = 'base';
+            $folder = 'base';
+            $Squery = "SELECT * FROM $folder ORDER BY type DESC";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
 
@@ -75,18 +96,20 @@ include '../auth/Sessionpersist.php';
                     <div class="col-xl-4 col-md-6 mb-4">
                         <div class="card card-1">
                             <div class="boximg">
-                                <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
-                                <form action='../admin/admin-item.php' method="POST">
-                                    <input type='hidden' name='directory' value=" <?php echo $img["Tag"] ?>" />
+                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                <form action='admin-item.php' method="POST">
+                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
+                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
                                     <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
                                 </form>
-                                <button type="submit" class="btn btn-outline-danger btn-auto btn-block">Delete</button>
                             </div>
                         </div>
                     </div>
+
+
                     <!-- /.row -->
             <?php
                 }
@@ -131,7 +154,6 @@ include '../auth/Sessionpersist.php';
 
     <!--***END  Page Content 
 =================================================================================================-->
-
     <!-- Footer 
 =================================================================================================-->
     <?php

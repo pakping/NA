@@ -20,7 +20,7 @@
 ===================================================================================================-->
 
      <?php
-        include '../components/head/head.php'
+        include '../components/head/head.php';
         ?>
 
 
@@ -48,7 +48,20 @@
      <!-- navbar
 ===================================================================================================-->
      <?php
-        include '../components/navbar/navbar.php'
+        include '../components/navbar/navbar.php';
+        if (isset($_POST['path'])){
+            $path = $_POST['path'];
+            $_SESSION['path'] = $path;
+        }else{
+            $path  =  $_SESSION['path'];
+        }
+
+        if (isset($_POST['directory'])){
+            $dir = $_POST['directory'];
+            $_SESSION['dir'] = $dir;
+        }else{
+            $dir = $_SESSION['dir'];
+        }
         ?>
      <!-- END navbar 
 ===================================================================================================-->
@@ -74,40 +87,57 @@
 ===================================================================================================-->
                  <?php
                     require "../db/connect.php";
-                    $dir = $_POST['directory'];
-                    $_SESSION['tag'] = $dir;
-                    $Squery = "SELECT * FROM $dir ORDER BY img_id DESC";
+                    
+                    $Squery = "SELECT * FROM $dir ORDER BY dirname DESC";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
+                            if ($img['type']=='folder'){
+                            ?>
+                                <div class="col-xl-4 col-md-6 mb-4">
+                        <div class="card card-1">
+                            <div class="boximg">
+                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                <form action='item.php' method="POST">
+                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
+                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                    <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
 
-                    ?>
-                         <!-- END db code php conphoto
-===================================================================================================-->
-
-                         <!-- Team photo 
-===================================================================================================-->
+                        <?php 
+                        }elseif  ($img['type']=='file'){
+                         ?>
                          <div class="col-xl-4 col-md-6 mb-4">
                              <div class="card card-1">
-                                 <a href="<?php echo  $img['img_path']; ?>" data-lightbox="<?php echo $img['img_id']; ?>" data-title="<?php echo $img['img_title']; ?> " style="height: 200px; overflow: hidden;">
-                                     <img src="<?php echo $img['img_path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                 <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
+                                     <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
                                  </a>
                                  <div class="card-body">
-                                     <h5 class="card-title"><?php echo $img['img_title']; ?></h5>
+                                     <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                      <p>รายละเอียด</p>
                                      <form action='../function/delete.php' method="POST">
-                                         <input type='hidden' name='del' value=" <?php echo $img["img_id"] ?>" />
+                                         <input type='hidden' name='del' value=" <?php echo $img["dirname"] ?>" />
                                          <button class="btn btn-danger" type='submit'>delete</button>
                                      </form>
                                      <button class="btn btn-success">download
-                                         <a href="<?php echo $img['img_path'] ?>" download="<?php $img['img_title'] ?>"></a>
+                                         <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
                                      </button>
                                  </div>
                              </div>
                          </div>
+
+
+
                          <!--END Team photo 
  ===================================================================================================-->
 
                  <?php
+                        }
                         }
                     }
                     ?>
