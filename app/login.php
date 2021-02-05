@@ -1,6 +1,7 @@
 <?php
 $content = 'everyone';
 include '../auth/Sessionpersist.php';
+$_SESSION['lastpage'] = "../app/login.php";
 if (isset($_SESSION['username'])) {
     header('location:../app/library.php');
 }

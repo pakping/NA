@@ -73,7 +73,7 @@ include '../auth/Sessionpersist.php';
  =================================================================================================-->
 
                     <div class="col-xl-4 col-md-6 mb-4">
-                        <div class="card card card-1">
+                        <div class="card card-1">
                             <div class="boximg">
                                 <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
                             </div>

@@ -1,7 +1,6 @@
 <!-- Page Content -->
 <section class="content-info section-bg">
   <div class="container">
-
     <div class="row">
 
       <!-- while แสดงรูปภาพ
@@ -15,18 +14,12 @@
       ?>
           <!-- END while แสดงรูปภาพ
 ================================================================================================= -->
-          <?php
-          $a = 0;
-          while ($a <= 2) {
-            $a += 1;
-          ?>
-
             <!-- card แสดงรูปภาพ
  =================================================================================================-->
             <div class="col-xl-4 col-md-6 mb-4">
               <div class="card card-1">
                 <div class="boximg">
-                  <img src="https://source.unsplash.com/by7IeC6Qa0k/500x350" class="card-img-top" alt="..." style="width: 100%;">
+                  <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
                 </div>
                 <div class="card-body text-center">
                   <h5 class="card-title">สินค้าประเภท <?php echo $img['Tag']; ?></h5>
@@ -39,7 +32,7 @@
             </div>
             <!-- /.row -->
       <?php
-          }
+          
         }
       }
 
