@@ -2,11 +2,7 @@
 require '../db/connect.php';
 session_start();
 $dir = $_POST ['dir']; //จาก Textbox ชื่อประเภท
-$filetmp = $_FILES['file_img']['tmp_name']; //ไฟล์ที่อัพ
-$filename = $_FILES['file_img']['name']; //ชื่อไฟล์จากไฟล์ที่อัพ
-$filepath = '../cover/' . $filename; //ที่อยู่ปลายทางของไฟล์
-$filetype = $_FILES['file_img']['type'];//ชนิดของไฟล์ที่อัพ
-$filetitle = $_POST['newtitle'];//จาก Textbox ชื่อรูปปก
+
 /* $path = '../img/'. $dir; */
 if (!file_exists("../img/ " . $dir)){
     mkdir("../img/$dir"); //ถ้ายังไม่มีโฟลเดอร์ให้สร้างใหม่
