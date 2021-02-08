@@ -3,7 +3,22 @@
  <?php
     $content = 'everyone';
     include '../auth/Sessionpersist.php';
-    ?>
+    $_SESSION['ppath'] = $_SESSION['path'];
+    if (isset($_POST['path'])) {
+            $path = $_POST['path'];
+            $_SESSION['path'] = $path;
+        } else {
+            $path  =  $_SESSION['path'];
+        }
+
+        if (isset($_POST['directory'])) {
+            $dir = $_POST['directory'];
+            $_SESSION['dir'] = $dir;
+        } else {
+            $dir = $_SESSION['dir'];
+        }
+        ?>
+    
  <!-- END Check Sessionpersist
 ===================================================================================================-->
 

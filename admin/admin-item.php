@@ -78,7 +78,7 @@
 ===================================================================================================-->
 <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.php"><?php echo $_SESSION['path']; ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php $_SESSION['ppath'];?>"><?php echo $_SESSION['path']; ?></a></li>
 
                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
             </ol>

@@ -1,6 +1,9 @@
 <?php
 $content = "everyone";
 include '../auth/Sessionpersist.php';
+$_SESSION['path'] = '../img/';
+$_SESSION['dir'] = 'base';
+$folder = 'base';
 ?>
 <!doctype html>
 <html lang="en">
@@ -117,8 +120,7 @@ include '../auth/Sessionpersist.php';
                                     <div class="col">
                                         <form action="" method="post">
                                             <div class="d-grid gap-2">
-                                                <button class="btn btn-secondary p-2">
-                                                <ion-icon name="arrow-down-circle-outline"></ion-icon> Download
+                                                
                                                 </button>
                                             </div>
                                         </form>
