@@ -14,9 +14,15 @@
         <li class="nav-item">
           <a class="nav-link" href="../admin/admin-library.php">จัดการรูปภาพ-วีดิโอ</a>
         </li>
+        <?php 
+          if ($_SESSION['type'] == 'admin') {
+        ?>
         <li class="nav-item">
           <a class="nav-link" href="../admin/register.php">สร้างบัญชีใหม่</a>
         </li>
+            <?php 
+          }
+            ?>
       </ul>
       <?php ?>
       <ul class="navbar-nav ml-auto">
