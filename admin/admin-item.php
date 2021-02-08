@@ -110,8 +110,12 @@
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                          <form action='admin-item.php' method="POST">
                                              <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
+<<<<<<< HEAD
                                              <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                              <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+=======
+                                             <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+>>>>>>> e0045ce688bced10fdae3f2cf3ca1c0b23ddb584
                                              <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
                                          </form>
                                      </div>
