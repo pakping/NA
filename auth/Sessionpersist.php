@@ -7,17 +7,20 @@ if (isset($_SESSION)) {
     else{
         if ($_SESSION['type'] == 'admin') {
             if($content == 'everyone'){
-                header("location:../admin/admin-index.php");
+                echo   '<script>alert("Access denied!")
+                window.location.href ="../admin/admin-library.php"</script>';
             }
         }
         elseif ($_SESSION['type'] == 'officer') {
             if ($content == 'admin') {
-                header("location:../admin/admin-index.php");
+                echo   '<script>alert("Access denied!")
+                window.location.href ="../admin/admin-library.php"</script>';
             }
         } 
         elseif ($_SESSION['type'] == 'guest') {
             if ($content != 'everyone'){
-            header("location:../index.php");
+                echo   '<script>alert("Access denied!")
+                window.location.href ="../admin/admin-library.php"</script>';
             }
         }
     }
