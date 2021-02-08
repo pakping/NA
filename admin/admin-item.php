@@ -135,13 +135,17 @@
                                                  <form action='../function/delete.php' method="POST">
                                                      <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
                                                      <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                                     <button class="btn btn-outline-danger " type='submit' style="width: 100%;"><ion-icon name="trash-outline" size="large"></ion-icon></button>
+                                                     <button class="btn btn-outline-danger " type='submit' style="width: 100%;">
+                                                         <ion-icon name="trash-outline" size="large"></ion-icon>
+                                                     </button>
                                                  </form>
                                              </div>
                                              <div class="col">
-                                                 <button class="btn btn-outline-success" style="width: 100%; "><ion-icon name="save-outline" size="large"></ion-icon>
-                                                     <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
-                                                 </button>
+                                                 <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>">
+                                                     <button class="btn btn-outline-success" style="width: 100%; ">
+                                                         <ion-icon name="save-outline" size="large"></ion-icon>
+                                                     </button>
+                                                 </a>
                                              </div>
                                          </div>
                                      </div>

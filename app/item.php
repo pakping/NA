@@ -139,10 +139,11 @@
 
                                              </div>
                                              <div class="col">
-                                                 <button class="btn btn-outline-success" style="width: 100%;">
-                                                     <ion-icon name="save-outline" size="large"></ion-icon>
-                                                     <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
-                                                 </button>
+                                                 <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>">
+                                                     <button class="btn btn-outline-success" style="width: 100%;">
+                                                         <ion-icon name="save-outline" size="large"></ion-icon>
+                                                     </button>
+                                                 </a>
                                              </div>
                                          </div>
                                          </form>
