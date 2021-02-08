@@ -64,15 +64,15 @@ $folder = 'base';
 =================================================================================================-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="" onclick="goBack()">backpage</a></li>
                 <li class="breadcrumb-item"><a href="../index.php"><?php echo $_SESSION['path']; ?></a></li>
-
                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
             </ol>
         </nav>
         <!--END Page Heading 
 =================================================================================================-->
 
-        <h1 class="my-4">Base
+        <h1 class="my-4">Library
             <!-- <small> xt</small> -->
         </h1>
         <div class="row">
@@ -97,8 +97,23 @@ $folder = 'base';
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="card card-1">
                             <div class="card-body">
-                                <h5 class="card-title">โฟลเดอร์ <?php echo $img['dirname']; ?></h5>
-                                <br>
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title">โฟลเดอร์ <?php echo $img['dirname']; ?></h5>
+                                    </div>
+                                    <div class="col">
+                                        <form action="../function/delete.php" method="post">
+                                            <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                            <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                            <div class=""><br>
+                                                <button class="btn btn-outline-danger" style="margin-top: -31px; margin-left: 84px;">
+                                                    <ion-icon name="trash-outline" ></ion-icon>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
                                 <div class="row row-cols-1">
                                     <div class="col">
                                         <form action='admin-item.php' method="POST">
@@ -106,20 +121,8 @@ $folder = 'base';
                                             <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                             <div class="d-grid gap-2">
-                                                <button type="submit" class="btn btn-outline-primary p-2" style="height: 267px;">
+                                                <button type="submit" class="btn p-2" style="height: 267px;">
                                                     <ion-icon name="folder-open-outline"></ion-icon> More
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <div class="col">
-                                        <form action="../function/delete.php" method="post">
-                                            <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
-                                            <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                            <div class="d-grid gap-2"><br>
-                                                <button class="btn btn-outline-danger p-2">
-                                                    <ion-icon name="trash-outline"></ion-icon> Delete
                                                 </button>
                                             </div>
                                         </form>

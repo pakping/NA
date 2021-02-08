@@ -104,8 +104,22 @@
                              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <div class="card-body">
-                                         <h5 class="card-title">โฟรเดอร์ <?php echo $img['dirname']; ?></h5>
-                                         <br>
+                                         <div class="row">
+                                             <div class="col">
+                                                 <h5 class="card-title">โฟรเดอร์ <?php echo $img['dirname']; ?></h5>
+                                             </div>
+                                             <div class="col">
+                                                 <form action="../function/delete.php" method="post">
+                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                                     <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                                     <div class=""><br>
+                                                         <button class="btn btn-outline-danger" style="margin-top: -31px; margin-left: 84px;">
+                                                             <ion-icon name="trash-outline"></ion-icon>
+                                                         </button>
+                                                     </div>
+                                                 </form>
+                                             </div>
+                                         </div>
                                          <form action='admin-item.php' method="POST">
                                              <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
                                              <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
