@@ -2,7 +2,7 @@
     <div class="card card-1">
         <div class="card-body text-center ">
             <button class="btn boximg" style="width: 100%; " data-bs-toggle="modal" data-bs-target="#folder1">
-                <ion-icon name="folder-outline" size="large"></ion-icon>
+                <ion-icon name="folder-outline" size="large"></ion-icon><br>เพิ่มโฟรเดอร์
             </button>
             <!-- Modal -->
             <div class="modal fade" id="folder1" tabindex="-1" aria-labelledby="folder1Label" aria-hidden="true">

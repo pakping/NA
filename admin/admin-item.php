@@ -5,19 +5,19 @@
     include '../auth/Sessionpersist.php';
     $_SESSION['ppath'] = $_SESSION['path'];
     if (isset($_POST['path'])) {
-            $path = $_POST['path'];
-            $_SESSION['path'] = $path;
-        } else {
-            $path  =  $_SESSION['path'];
-        }
+        $path = $_POST['path'];
+        $_SESSION['path'] = $path;
+    } else {
+        $path  =  $_SESSION['path'];
+    }
 
-        if (isset($_POST['directory'])) {
-            $dir = $_POST['directory'];
-            $_SESSION['dir'] = $dir;
-        } else {
-            $dir = $_SESSION['dir'];
-        }
-        ?>
+    if (isset($_POST['directory'])) {
+        $dir = $_POST['directory'];
+        $_SESSION['dir'] = $dir;
+    } else {
+        $dir = $_SESSION['dir'];
+    }
+    ?>
  <!-- END Check Sessionpersist
 ===================================================================================================-->
 
@@ -63,7 +63,7 @@
 ===================================================================================================-->
      <?php
         include '../components/navbar/navbaradmin.php';
-        
+
         ?>
      <!-- END navbar 
 ===================================================================================================-->
@@ -76,13 +76,13 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-<nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?php $_SESSION['ppath'];?>"><?php echo $_SESSION['path']; ?></a></li>
+         <nav aria-label="breadcrumb">
+             <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="<?php $_SESSION['ppath']; ?>"><?php echo $_SESSION['path']; ?></a></li>
 
-                <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
-            </ol>
-        </nav>
+                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
+             </ol>
+         </nav>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
@@ -101,18 +101,20 @@
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
                     ?>
-                             <div class="col-xl-4 col-md-6 mb-4">
+                             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
-                                     <div class="boximg">
-                                         <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
-                                     </div>
-                                     <div class="card-body text-center">
-                                         <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
+                                     <div class="card-body">
+                                         <h5 class="card-title">โฟรเดอร์ <?php echo $img['dirname']; ?></h5>
+                                         <br>
                                          <form action='admin-item.php' method="POST">
                                              <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
                                              <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                              <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                             <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
+                                             <button type="submit" class="btn" style="width: 100%; height: 267px;">
+                                                 <ion-icon name="folder-open-outline" size="large"></ion-icon>
+                                                 <br>
+                                                 More
+                                             </button>
                                          </form>
                                      </div>
                                  </div>
@@ -120,7 +122,7 @@
                          <?php
                             } elseif ($img['type'] == 'file') {
                             ?>
-                             <div class="col-xl-4 col-md-6 mb-4">
+                             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
                                          <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
@@ -128,14 +130,20 @@
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                          <p>รายละเอียด</p>
-                                         <form action='../function/delete.php' method="POST">
-                                             <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
-                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                             <button class="btn btn-danger" type='submit'>delete</button>
-                                         </form>
-                                         <button class="btn btn-success">download
-                                             <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
-                                         </button>
+                                         <div class="row align-item-start">
+                                             <div class="col">
+                                                 <form action='../function/delete.php' method="POST">
+                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                                     <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                                     <button class="btn btn-outline-danger " type='submit' style="width: 100%;"><ion-icon name="trash-outline" size="large"></ion-icon></button>
+                                                 </form>
+                                             </div>
+                                             <div class="col">
+                                                 <button class="btn btn-outline-success" style="width: 100%; "><ion-icon name="save-outline" size="large"></ion-icon>
+                                                     <a href="<?php echo $img['path'] ?>" download="<?php $img['dirname'] ?>"></a>
+                                                 </button>
+                                             </div>
+                                         </div>
                                      </div>
                                  </div>
                              </div>
@@ -147,7 +155,7 @@
                         //button add file and folder 
                     }
                     include '../function/addfolder.php';
-                    include ('../Function/additem.php');
+                    include('../Function/additem.php');
                     ?>
 
              </div>

@@ -2,7 +2,7 @@
     <div class="card card-1">
         <div class="card-body text-center ">
             <button class="btn boximg" style="width: 100%; " data-bs-toggle="modal" data-bs-target="#file1">
-                <ion-icon name="document-outline" size="large"></ion-icon>
+                <ion-icon name="document-outline" size="large"></ion-icon><br> เพิ่มไฟล์สินค้า
             </button>
             <!-- Modal -->
             <div class="modal fade" id="file1" tabindex="-1" aria-labelledby="file1Label" aria-hidden="true">

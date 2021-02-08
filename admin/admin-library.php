@@ -81,7 +81,7 @@ $folder = 'base';
 ================================================================================================= -->
             <?php
             require "../db/connect.php";
-            
+
             $Squery = "SELECT * FROM $folder ORDER BY type DESC";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
@@ -96,31 +96,29 @@ $folder = 'base';
 
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="card card-1">
-                            <div class="boximg">
-                                <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
-                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">โฟลเดอร์ <?php echo $img['dirname']; ?></h5>
                                 <br>
-                                <div class="row align-items-start">
+                                <div class="row row-cols-1">
                                     <div class="col">
                                         <form action='admin-item.php' method="POST">
                                             <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
                                             <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                             <div class="d-grid gap-2">
-                                                <button type="submit" class="btn btn-primary p-2">
+                                                <button type="submit" class="btn btn-outline-primary p-2" style="height: 267px;">
                                                     <ion-icon name="folder-open-outline"></ion-icon> More
                                                 </button>
                                             </div>
                                         </form>
                                     </div>
+
                                     <div class="col">
                                         <form action="../function/delete.php" method="post">
                                             <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                            <div class="d-grid gap-2">
-                                                <button class="btn btn-danger p-2">
+                                            <div class="d-grid gap-2"><br>
+                                                <button class="btn btn-outline-danger p-2">
                                                     <ion-icon name="trash-outline"></ion-icon> Delete
                                                 </button>
                                             </div>
@@ -133,11 +131,12 @@ $folder = 'base';
 
 
                     <!-- /.row -->
-    <?php
-    }}
+            <?php
+                }
+            }
 
-    include '../function/addfolder.php';
-?>
+            include '../function/addfolder.php';
+            ?>
 
 
         </div>

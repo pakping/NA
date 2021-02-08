@@ -2,24 +2,24 @@
 session_start();
 if (isset($_SESSION['type'])){
     if ($_SESSION['type'] == 'admin'){
-        echo '<script>alert("admin")
+        echo '<script>
     window.location.href ="admin/admin-index.php"</script>';
     }
     elseif ($_SESSION ['type'] == 'officer'){
-        echo '<script>alert("officer")
+        echo '<script>
     window.location.href ="admin/admin-index.php"</script>';
     }
     elseif ($_SESSION['type']=='guest'){
-        echo '<script>alert("guest")
+        echo '<script>
     window.location.href ="app/home.php"</script>';
     }
     else {
-        echo '<script>alert("other")
+        echo '<script>
     window.location.href ="app/home.php"</script>';
     }
 }
 else {
-    echo '<script>alert("else")
+    echo '<script>
     window.location.href ="app/home.php"</script>';
 }
 ?>
