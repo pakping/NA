@@ -13,13 +13,13 @@ if ($pass == $pass2) {
     if ($result) {
         echo "success";
         echo "<script>alert('สมัครสมาชิกเรียบร้อย')
-            window.location.href='../app/register.php';</script>";
+            window.location.href='../admin/register.php';</script>";
     } else {
         echo "fail";
         echo "<script>alert('มีผู้ใช้นี้อยู่แล้ว');
-            window.location.href='../app/register.php';</script>";
+            window.location.href='../admin/register.php';</script>";
     }
 } else {
     echo "<script>alert('พาสเวิร์ดไม่ตรงกัน');
-            window.location.href='../app/register.php';</script>";
+            window.location.href='../admin/register.php';</script>";
 }

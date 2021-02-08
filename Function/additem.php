@@ -6,7 +6,7 @@
             </button>
             <!-- Modal -->
             <div class="modal fade" id="file1" tabindex="-1" aria-labelledby="file1Label" aria-hidden="true">
-                <form action="../Function/upload.php" method="post" enctype="multipart/form-data">
+                <form action="../function/upload.php" method="post" enctype="multipart/form-data">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

@@ -1,11 +1,11 @@
 <?php
 $host = "localhost";
-$username = "root";
-$password = "";
+$username = "root1";
+$password = "Nam1214!!";
 $db_name = "photogallery";
 
 $con = mysqli_connect($host, $username, $password, $db_name);
-mysqli_set_charset($con, "utf8"); //เชื่อมต่อกับฐานข้อมูล
+mysqli_set_charset($con,"utf8"); //เชื่อมต่อกับฐานข้อมูล
 if ($con->connect_error) {
   die("Connection failed: " . $con->connect_error);
 }

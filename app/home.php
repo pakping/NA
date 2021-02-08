@@ -138,21 +138,6 @@
      </section>
      <!--END  Pagae content-photo-library
 ===================================================================================================-->
-
-
-
-     <section class="features-icons bg-light text-center">
-       <div class="container">
-         <h3>-- ช่องทางการติดต่อ --</h3>
-         <p class="lead"> <a href="https://www.facebook.com/chititpat.Sripoot">faebook-pakping</a> <a href="https://www.facebook.com/jeerachon9/">facebook-G</a>
-           <a href="https://www.facebook.com/profile.php?id=100002182427958">facebook-big</a>
-         </p>
-       </div>
-     </section>
-
-
-
-
      <!-- Testimonials -->
      <section class="testimonials text-center bg-light">
        <div class="container">
@@ -161,22 +146,22 @@
          <div class="row">
            <div class="col-lg-4">
              <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-               <img src="img/testimonials-1.jpg" class="img-fluid rounded-circle mb-3" alt="">
-               <h5>Margeret E.</h5>
+               <img src="../css/img/testimonials-1.jpg" class="img-fluid rounded-circle mb-3" alt="">
+               <h5>A.</h5>
                <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
              </div>
            </div>
            <div class="col-lg-4">
              <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-               <img src="img/testimonials-2.jpg" class="img-fluid rounded-circle mb-3" alt="">
-               <h5>Fred S.</h5>
+               <img src="../css/img/testimonials-2.jpg" class="img-fluid rounded-circle mb-3" alt="">
+               <h5>B.</h5>
                <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
              </div>
            </div>
            <div class="col-lg-4">
              <div class="testimonials-item mx-auto mb-5 mb-lg-0">
-               <img src="img/testimonials-3.jpg" class="img-fluid rounded-circle mb-3" alt="">
-               <h5>Sarah W.</h5>
+               <img src="../css/img/testimonials-3.jpg" class="img-fluid rounded-circle mb-3" alt="">
+               <h5>C.</h5>
                <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
              </div>
            </div>

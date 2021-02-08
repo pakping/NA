@@ -159,7 +159,7 @@
                         //button add file and folder 
                     }
                     include '../function/addfolder.php';
-                    include('../Function/additem.php');
+                    include('../function/additem.php');
                     ?>
 
              </div>

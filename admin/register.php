@@ -1,6 +1,6 @@
 <?php
 $content = "admin";
-require "../auth/sessionpersist.php"
+require "../auth/Sessionpersist.php"
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@ require "../auth/sessionpersist.php"
   ?>
   <div class="container">
     <br>
-    <form action="../DB/dbregister.php" method="post">
+    <form action="../db/dbregister.php" method="post">
       <div class="main-1">
         <div class="shadow-lg p-3">
           <h1>ลงทะเบียน</h1>

@@ -6,7 +6,7 @@
             </button>
             <!-- Modal -->
             <div class="modal fade" id="folder1" tabindex="-1" aria-labelledby="folder1Label" aria-hidden="true">
-                <form action="../Function/makefolder.php" method="post" enctype="multipart/form-data">
+                <form action="../function/makefolder.php" method="post" enctype="multipart/form-data">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
