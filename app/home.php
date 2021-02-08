@@ -133,7 +133,7 @@
 ===================================================================================================-->
      <section>
        <?php
-        include '../components/content/content.php'
+        include '../components/content/content.php';
         ?>
      </section>
      <!--END  Pagae content-photo-library

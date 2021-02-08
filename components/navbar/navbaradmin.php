@@ -11,14 +11,11 @@
         <li class="nav-item">
           <a class="nav-link" href="../admin/admin-index.php">หน้าหลัก</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" class="link-primary" href="../admin/upload-type.php">เพิ่มประเภทสินค้า</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/upload-photo.php">เพิ่มรูปภาพ-วีดีโอ</a>
-        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="../admin/admin-library.php">จัดการรูปภาพ-วีดิโอ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../admin/register.php">สร้างบัญชีใหม่</a>
         </li>
       </ul>
       <?php ?>
