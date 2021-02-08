@@ -1,6 +1,9 @@
 <?php
 $content = "officer";
 include '../auth/Sessionpersist.php';
+$_SESSION['path'] = '../img/';
+$_SESSION['dir'] = 'base';
+$folder = 'base';
 ?>
 <!doctype html>
 <html lang="en">
@@ -61,9 +64,9 @@ include '../auth/Sessionpersist.php';
 =================================================================================================-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="../index.php"><?php echo $_SESSION['path']; ?></a></li>
 
-                <li class="breadcrumb-item active" aria-current="page"> Library</li>
+                <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
             </ol>
         </nav>
         <!--END Page Heading 
@@ -78,9 +81,7 @@ include '../auth/Sessionpersist.php';
 ================================================================================================= -->
             <?php
             require "../db/connect.php";
-            $_SESSION['path'] = '../img/';
-            $_SESSION['dir'] = 'base';
-            $folder = 'base';
+            
             $Squery = "SELECT * FROM $folder ORDER BY type DESC";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
@@ -93,29 +94,52 @@ include '../auth/Sessionpersist.php';
                     <!-- card แสดงรูปภาพ
  =================================================================================================-->
 
-                    <div class="col-xl-4 col-md-6 mb-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="card card-1">
                             <div class="boximg">
                                 <img src="../cover/2020-12-26.png" class="card-img-top" alt="" style="width: 100%;">
                             </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
-                                <form action='admin-item.php' method="POST">
-                                    <input type='hidden' name='path' value= "<?php echo $img["path"]; ?>"/>
-                                    <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
-                                    <button type="submit" class="btn btn-outline-primary btn-auto btn-block">More</button>
-                                </form>
+                            <div class="card-body">
+                                <h5 class="card-title">โฟลเดอร์ <?php echo $img['dirname']; ?></h5>
+                                <br>
+                                <div class="row align-items-start">
+                                    <div class="col">
+                                        <form action='admin-item.php' method="POST">
+                                            <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
+                                            <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
+                                            <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                            <div class="d-grid gap-2">
+                                                <button type="submit" class="btn btn-primary p-2">
+                                                    <ion-icon name="folder-open-outline"></ion-icon> More
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col">
+                                        <form action="../function/delete.php" method="post">
+                                            <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                            <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                            <div class="d-grid gap-2">
+                                                <button class="btn btn-danger p-2">
+                                                    <ion-icon name="trash-outline"></ion-icon> Delete
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
 
                     <!-- /.row -->
-            <?php
-                }
-            }
+    <?php
+    }}
 
-            ?>
+    include '../function/addfolder.php';
+?>
+
+
         </div>
 
         <!-- card แสดงรูปภาพ

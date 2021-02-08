@@ -13,13 +13,19 @@ if (!file_exists($newpath)){
     $newpath = $newpath . '/';
     $query2 = "INSERT INTO $cdir (dirname,path,type) value('$dir','$newpath','folder')";
     mysqli_query($con,$query2);
+    if ($path == '../img'){
     echo '<script>alert("Update Complete!")
     window.location.href ="../admin/admin-library.php"</script>';
+    }
+    else{
+    echo '<script>alert("Update Complete!")
+    window.location.href ="../admin/admin-item.php"</script>';
+    }
 
 }
 else{
     echo '<script>alert("This Folder is already exist")
-    window.location.href ="../app/library.php"</script>';
+    window.location.href ="../admin/admin-library.php"</script>';
 }
 
 ?>

@@ -16,10 +16,10 @@ if (mysqli_num_rows($result)==0){
     mysqli_query($con,$query);
     move_uploaded_file($filetmp, $filepath);
     echo '<script>alert("Upload complete!")
-        window.location.href ="../admin/admin-library.php"</script>';
+        window.location.href ="../admin/admin-item.php"</script>';
 }
 elseif (mysqli_num_rows($result)==1){
     echo '<script>alert("This file is already exist")
-    window.location.href ="../admin/admin-library.php"</script>';
+    window.location.href ="../admin/admin-item.php"</script>';
 }
 ?>
