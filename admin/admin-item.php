@@ -10,27 +10,22 @@
     } else {
         $path  =  $_SESSION['path'];
     }
-    if (isset($_POST['directory2'])){
+    if (isset($_POST['directory2'])) {
         array_pop($_SESSION['page']);
         $x = end($_SESSION['page']);
         $dir = end($_SESSION['page']);
-        if (end($_SESSION['page']) == 'base'){
+        if (end($_SESSION['page']) == 'base') {
             header('location:../admin/admin-library.php');
-        }
-        else {
+        } else {
             header('location:../admin/admin-item.php');
         }
-        
-        
-    }
-    elseif (isset($_POST['directory'])) {
-        if (end($_SESSION['page'])!== $_POST['directory']){
-            array_push($_SESSION['page'],$_POST['directory']);
+    } elseif (isset($_POST['directory'])) {
+        if (end($_SESSION['page']) !== $_POST['directory']) {
+            array_push($_SESSION['page'], $_POST['directory']);
         }
-        $dir = end($_SESSION['page']) ;
-        
+        $dir = end($_SESSION['page']);
     } else {
-        $dir = end($_SESSION['page']) ;
+        $dir = end($_SESSION['page']);
     }
     ?>
  <!-- END Check Sessionpersist
@@ -45,7 +40,7 @@
      <title>สินค้า</title>
      <meta charset="utf-8">
      <META NAME="robots" CONTENT="noindex,onfollow">
-	 <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
+     <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
      <!-- Required meta tags 
 ===================================================================================================-->
 
@@ -58,7 +53,7 @@
      <!-- CSS
 ===================================================================================================-->
      <link rel="stylesheet" href="../css/style-navbar.css">
-	<link href="../dist/css/lightbox.min.css" rel="stylesheet">
+     <link href="../dist/css/lightbox.min.css" rel="stylesheet">
      <style>
          .card-1 {
              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -94,19 +89,26 @@
          <!-- navbreadcrumb
 ===================================================================================================-->
          <nav aria-label="breadcrumb">
-             <b><?php
-             foreach ($_SESSION['page'] as $item) {
-                echo  $item . "/" ;
-             }
-             ?>
-             </b>
-             <form action="" method = 'post'>
-                 <button type = 'btn' >Back</button>
-                 <input type='hidden' name='directory2' value='<?php end($_SESSION['page'])?>' >
+             <ol class="breadcrumb">
+                 <li class="breadcrumb-item"><a href="../admin/admin-index.php">Home</a></li>
+
+                 <li class="breadcrumb-item active" aria-current="page">
+                     <?php
+                        foreach ($_SESSION['page'] as $item) {
+                            echo  $item . " /";
+                        }
+                        ?>
+                 </li>
+             </ol>
+
+             <form action="" method='post'>
+                 <button type='btn' class="btn btn-primary">Back</button>
+                 <input type='hidden' name='directory2' value='<?php end($_SESSION['page']) ?>'>
+                 
              </form>
-                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
-             
-         </nav>
+             <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
+
+         </nav><br>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 
@@ -125,7 +127,7 @@
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
                     ?>
-                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <div class="card-body">
                                          <div class="row">
@@ -196,7 +198,7 @@
                         //button add file and folder 
                     }
                     include '../function/addfolder.php';
-                    include ('../function/additem.php');
+                    include('../function/additem.php');
                     ?>
 
              </div>

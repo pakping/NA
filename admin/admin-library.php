@@ -12,10 +12,10 @@ $_SESSION['page'] = array('base');
 <head>
     <!-- Required meta tags
 ===================================================================================================-->
-    <title>Hello, world!</title>
+    <title>จัดการโฟรเดอร์สินค้า</title>
     <meta charset="utf-8">
     <META NAME="robots" CONTENT="noindex,onfollow">
-	<link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
+    <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
     <!-- END Required meta tags 
 ===================================================================================================-->
 
@@ -24,14 +24,14 @@ $_SESSION['page'] = array('base');
     include '../components/head/head.php'
     ?>
     <link rel="stylesheet" href="../css/style-navbar.css">
-		<link href="../dist/css/lightbox.min.css" rel="stylesheet">
+    <link href="../dist/css/lightbox.min.css" rel="stylesheet">
     <style>
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
             transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
             border-radius: 10px;
         }
-        
+
         .card-1:hover {
             box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         }
@@ -66,12 +66,18 @@ $_SESSION['page'] = array('base');
         <!-- Page Heading 
 =================================================================================================-->
         <nav aria-label="breadcrumb">
-        <b><?php
-             foreach ($_SESSION['page'] as $item) {
-                echo  $item . "/" ;
-             }
-             ?>
-        </b>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../admin/admin-index.php">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <?php
+                    foreach ($_SESSION['page'] as $item) {
+                        echo  $item ;
+                    }
+                    ?>
+                </li>
+            </ol>
+
+
         </nav>
         <!--END Page Heading 
 =================================================================================================-->
@@ -111,7 +117,7 @@ $_SESSION['page'] = array('base');
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                             <div class=""><br>
                                                 <button class="btn btn-outline-danger" style="margin-top: -31px; margin-left: 84px;">
-                                                    <ion-icon name="trash-outline" ></ion-icon>
+                                                    <ion-icon name="trash-outline"></ion-icon>
                                                 </button>
                                             </div>
                                         </form>
@@ -124,7 +130,7 @@ $_SESSION['page'] = array('base');
                                             <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
                                             <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
-                                            
+
                                             <div class="d-grid gap-2">
                                                 <button type="submit" class="btn p-2" style="height: 267px;">
                                                     <ion-icon name="folder-open-outline"></ion-icon> More
