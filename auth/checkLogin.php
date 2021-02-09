@@ -16,7 +16,7 @@ if (!$objResult) {
 	if ($objResult['LoginStatus'] == '1') {
 ?>
 <script>
-alert(\"ผู้ใช้นี้กำลังใช้งานอยู่\");
+alert("ผู้ใช้นี้กำลังใช้งานอยู่");
 window.location.assign("../app/login.php");
 </script>
 <?php
