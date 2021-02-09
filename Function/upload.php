@@ -3,7 +3,7 @@ session_start();
 
 require "../db/connect.php";
 $path =$_SESSION['path'];//path ค่าเริ่มต้นคือ ../img
-$cdir = $_SESSION['dir'];//ชื่อ directory ปัจจุบัน ค่าเริ่มต้นคือ base
+$cdir = end($_SESSION['page']);//ชื่อ directory ปัจจุบัน ค่าเริ่มต้นคือ base
 
 $title = $_POST['newtitle'];
 $filetmp = $_FILES['file_img']['tmp_name'];

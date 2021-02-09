@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2021 at 05:10 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Feb 09, 2021 at 03:27 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -24,35 +25,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rainbow`
+-- Table structure for table `base`
 --
 
-CREATE TABLE `rainbow` (
-  `img_id` int(11) NOT NULL,
-  `img_name` varchar(255) DEFAULT NULL,
-  `img_type` varchar(255) DEFAULT NULL,
-  `img_path` varchar(255) DEFAULT NULL,
-  `img_title` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tagmaster`
---
-
-CREATE TABLE `tagmaster` (
-  `Tag` varchar(40) NOT NULL,
-  `path` varchar(100) NOT NULL
+CREATE TABLE `base` (
+  `dirname` varchar(255) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tagmaster`
+-- Dumping data for table `base`
 --
 
-INSERT INTO `tagmaster` (`Tag`, `path`) VALUES
-('rainbow', '../cover/tem.jpg'),
-('test', '../cover/2020-12-26.png');
+INSERT INTO `base` (`dirname`, `path`, `type`) VALUES
+('Test', '../img/Test/', 'folder');
 
 -- --------------------------------------------------------
 
@@ -61,21 +48,17 @@ INSERT INTO `tagmaster` (`Tag`, `path`) VALUES
 --
 
 CREATE TABLE `test` (
-  `img_id` int(11) NOT NULL,
-  `img_name` varchar(255) DEFAULT NULL,
-  `img_type` varchar(255) DEFAULT NULL,
-  `img_path` varchar(255) DEFAULT NULL,
-  `img_title` varchar(255) DEFAULT NULL
+  `dirname` varchar(255) NOT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `test`
 --
 
-INSERT INTO `test` (`img_id`, `img_name`, `img_type`, `img_path`, `img_title`) VALUES
-(5, 'tem.jpg', 'image/jpeg', '../img/test/tem.jpg', 'Yes'),
-(6, 'c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'image/jpeg', '../img/test/c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'aaaa'),
-(7, 'c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'image/jpeg', '../img/test/c573bf41-6a7c-4927-845c-4ca0260aad6b-760x400.jpeg', 'Yes');
+INSERT INTO `test` (`dirname`, `path`, `type`) VALUES
+('math', '../img/Test/1.PNG', 'file');
 
 -- --------------------------------------------------------
 
@@ -96,7 +79,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Username`, `Password`, `Access`, `LoginStatus`, `LastUpdate`) VALUES
-('Jeerachon', '123456', 'user', 1, '2021-02-04 09:11:32'),
+('Jeerachon', '123456', 'officer', 1, '2021-02-07 17:08:39'),
 ('Sirichai', '654321', 'admin', 0, '0000-00-00 00:00:00');
 
 --
@@ -104,44 +87,22 @@ INSERT INTO `user` (`Username`, `Password`, `Access`, `LoginStatus`, `LastUpdate
 --
 
 --
--- Indexes for table `rainbow`
+-- Indexes for table `base`
 --
-ALTER TABLE `rainbow`
-  ADD PRIMARY KEY (`img_id`);
-
---
--- Indexes for table `tagmaster`
---
-ALTER TABLE `tagmaster`
-  ADD PRIMARY KEY (`Tag`);
+ALTER TABLE `base`
+  ADD PRIMARY KEY (`dirname`);
 
 --
 -- Indexes for table `test`
 --
 ALTER TABLE `test`
-  ADD PRIMARY KEY (`img_id`);
+  ADD PRIMARY KEY (`dirname`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`Username`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `rainbow`
---
-ALTER TABLE `rainbow`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `test`
---
-ALTER TABLE `test`
-  MODIFY `img_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
