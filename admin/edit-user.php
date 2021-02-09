@@ -14,6 +14,9 @@ require "../auth/Sessionpersist.php"
     include '../components/head/head.php'
     ?>
     <link rel="stylesheet" href="../css/style-navbar.css">
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.css" />
+
 </head>
 
 <body>
@@ -21,9 +24,9 @@ require "../auth/Sessionpersist.php"
     include '../components/navbar/navbaradmin.php'
     ?>
     <div class="container">
-        <div class="">
+        <div >
             <br>
-            <table class="table">
+            <table class="table" id="myTable">
                 <thead>
                     <tr>
                         <th scope="col">ลำดับที่</th>
@@ -48,11 +51,11 @@ require "../auth/Sessionpersist.php"
                                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                     <!-- ปุ่มลบ -->
                                     <form action="../function/deluser.php" method="post">
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                    <input type="hidden" name='user' value="<?php echo $row['Username'];?>">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <input type="hidden" name='user' value="<?php echo $row['Username']; ?>">
                                     </form>
-                                                    
-                                    
+
+
                                 </div>
                             </td>
                         </tr>
@@ -70,6 +73,12 @@ require "../auth/Sessionpersist.php"
         include('../components/footer.php');
         ?>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.23/datatables.min.js"></script>
 </body>
 
 </html>
