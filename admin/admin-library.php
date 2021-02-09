@@ -4,6 +4,8 @@ include '../auth/Sessionpersist.php';
 $_SESSION['path'] = '../img/';
 $_SESSION['dir'] = 'base';
 $folder = 'base';
+$_SESSION['page'] = array($_SESSION['dir']);
+echo end($_SESSION['page']);
 ?>
 <!doctype html>
 <html lang="en">
@@ -66,7 +68,7 @@ $folder = 'base';
 =================================================================================================-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.php"><?php echo $_SESSION['path']; ?></a></li>
+        
                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
             </ol>
         </nav>
@@ -121,6 +123,7 @@ $folder = 'base';
                                             <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
                                             <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                             <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
+                                            
                                             <div class="d-grid gap-2">
                                                 <button type="submit" class="btn p-2" style="height: 267px;">
                                                     <ion-icon name="folder-open-outline"></ion-icon> More

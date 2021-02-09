@@ -12,11 +12,13 @@
     }
 
     if (isset($_POST['directory'])) {
-        $dir = $_POST['directory'];
-        $_SESSION['dir'] = $dir;
+        array_push($_SESSION['page'],$_POST['directory']);
+        $dir = end($_SESSION['page']) ;
+        
     } else {
-        $dir = $_SESSION['dir'];
+        $dir = end($_SESSION['page']) ;
     }
+    echo end($_SESSION['page']);
     ?>
  <!-- END Check Sessionpersist
 ===================================================================================================-->
@@ -80,8 +82,26 @@
 ===================================================================================================-->
          <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="<?php $_SESSION['ppath']; ?>"><?php echo $_SESSION['path']; ?></a></li>
-
+             <form action="
+             <?php
+             if (end($_SESSION['page']) == 'base'){
+                 echo 'admin-library.php';
+             }
+            else {
+                echo 'admin-item.php';
+            }
+             
+             ?>
+             ">
+                 <button type = 'btn' >Back</button>
+                 <input type='hidden' name='directory' value='
+                 <?php 
+                 
+                 array_pop($_SESSION['page']);
+                 $x = end($_SESSION['page']);
+                 echo $x
+                 ?>' >
+             </form>
                  <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
              </ol>
          </nav>

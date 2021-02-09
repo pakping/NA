@@ -1,8 +1,8 @@
 <?php
 session_start();
 require "../db/connect.php";
-$path =$_SESSION['path'];//path ค่าเริ่มต้นคือ ../img
-$cdir = $_SESSION['dir'];//ชื่อ directory ปัจจุบัน ค่าเริ่มต้นคือ base
+$path = $_SESSION['path'];//path ค่าเริ่มต้นคือ ../img
+$cdir = end($_SESSION['page']);//ชื่อ directory ปัจจุบัน ค่าเริ่มต้นคือ base
 $dir = $_POST['dir'];//ชื่อโฟลเดอร์ที่ต้องการ
 $a = '/';
 $newpath = $path . $dir;
@@ -13,7 +13,7 @@ if (!file_exists($newpath)){
     $newpath = $newpath . '/';
     $query2 = "INSERT INTO $cdir (dirname,path,type) value('$dir','$newpath','folder')";
     mysqli_query($con,$query2);
-    if ($path == '../img'){
+    if ($path == '../img/'){
     echo '<script>alert("Update Complete!")
     window.location.href ="../admin/admin-library.php"</script>';
     }
