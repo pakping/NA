@@ -86,7 +86,7 @@ ul {
 
 .navbar-expand-lg .navbar-nav .nav-link:active {
     border-top: 4px solid #194787;
-    color:#194787;
+    color: #194787;
 }
 
 .navbar-nav button {
@@ -105,7 +105,10 @@ ul {
 .navbar-nav .btn:hover {
     background-color: #0a3d62;
 }
+
+
 /* --------body-----*/
+
 header {
     background: url('img/banner.jpg') no-repeat center center;
     background-size: cover;
@@ -140,7 +143,7 @@ header {
 }
 
 .testimonials .testimonials-item img {
-    max-width: 12rem;
+    max-width: 18rem;
     box-shadow: 0 5px 5px #adb5bd;
 }
 
