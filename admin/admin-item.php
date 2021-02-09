@@ -10,15 +10,28 @@
     } else {
         $path  =  $_SESSION['path'];
     }
-
-    if (isset($_POST['directory'])) {
-        array_push($_SESSION['page'],$_POST['directory']);
+    if (isset($_POST['directory2'])){
+        array_pop($_SESSION['page']);
+        $x = end($_SESSION['page']);
+        $dir = end($_SESSION['page']);
+        if (end($_SESSION['page']) == 'base'){
+            header('location:../admin/admin-library.php');
+        }
+        else {
+            header('location:../admin/admin-item.php');
+        }
+        
+        
+    }
+    elseif (isset($_POST['directory'])) {
+        if (end($_SESSION['page'])!== $_POST['directory']){
+            array_push($_SESSION['page'],$_POST['directory']);
+        }
         $dir = end($_SESSION['page']) ;
         
     } else {
         $dir = end($_SESSION['page']) ;
     }
-    echo end($_SESSION['page']);
     ?>
  <!-- END Check Sessionpersist
 ===================================================================================================-->
@@ -81,29 +94,18 @@
          <!-- navbreadcrumb
 ===================================================================================================-->
          <nav aria-label="breadcrumb">
-             <ol class="breadcrumb">
-             <form action="
-             <?php
-             if (end($_SESSION['page']) == 'base'){
-                 echo 'admin-library.php';
+             <b><?php
+             foreach ($_SESSION['page'] as $item) {
+                echo  $item . "/" ;
              }
-            else {
-                echo 'admin-item.php';
-            }
-             
              ?>
-             ">
+             </b>
+             <form action="" method = 'post'>
                  <button type = 'btn' >Back</button>
-                 <input type='hidden' name='directory' value='
-                 <?php 
-                 
-                 array_pop($_SESSION['page']);
-                 $x = end($_SESSION['page']);
-                 echo $x
-                 ?>' >
+                 <input type='hidden' name='directory2' value='<?php end($_SESSION['page'])?>' >
              </form>
                  <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
-             </ol>
+             
          </nav>
          <!-- END navbreadcrumb
 ===================================================================================================-->
@@ -118,7 +120,7 @@
                  <?php
                     require "../db/connect.php";
 
-                    $Squery = "SELECT * FROM $dir ORDER BY dirname DESC";
+                    $Squery = "SELECT * FROM $dir ORDER BY type DESC,dirname";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
@@ -194,7 +196,7 @@
                         //button add file and folder 
                     }
                     include '../function/addfolder.php';
-                    include('../function/additem.php');
+                    include ('../function/additem.php');
                     ?>
 
              </div>

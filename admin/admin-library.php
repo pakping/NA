@@ -4,8 +4,7 @@ include '../auth/Sessionpersist.php';
 $_SESSION['path'] = '../img/';
 $_SESSION['dir'] = 'base';
 $folder = 'base';
-$_SESSION['page'] = array($_SESSION['dir']);
-echo end($_SESSION['page']);
+$_SESSION['page'] = array('base');
 ?>
 <!doctype html>
 <html lang="en">
@@ -67,15 +66,17 @@ echo end($_SESSION['page']);
         <!-- Page Heading 
 =================================================================================================-->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-        
-                <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
-            </ol>
+        <b><?php
+             foreach ($_SESSION['page'] as $item) {
+                echo  $item . "/" ;
+             }
+             ?>
+        </b>
         </nav>
         <!--END Page Heading 
 =================================================================================================-->
 
-        <h1 class="my-4">Library
+        <h1 class="my-4">
             <!-- <small> xt</small> -->
         </h1>
         <div class="row">
@@ -85,7 +86,7 @@ echo end($_SESSION['page']);
             <?php
             require "../db/connect.php";
 
-            $Squery = "SELECT * FROM $folder ORDER BY type DESC";
+            $Squery = "SELECT * FROM $folder ORDER BY type DESC,dirname";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
 
