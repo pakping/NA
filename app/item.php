@@ -10,12 +10,27 @@
     } else {
         $path  =  $_SESSION['path'];
     }
-
-    if (isset($_POST['directory'])) {
-        $dir = $_POST['directory'];
-        $_SESSION['dir'] = $dir;
+    if (isset($_POST['directory2'])){
+        array_pop($_SESSION['page']);
+        $x = end($_SESSION['page']);
+        $dir = end($_SESSION['page']);
+        if (end($_SESSION['page']) == 'base'){
+            header('location:../app/library.php');
+        }
+        else {
+            header('location:../app/item.php');
+        }
+        
+        
+    }
+    elseif (isset($_POST['directory'])) {
+        if (end($_SESSION['page'])!== $_POST['directory']){
+            array_push($_SESSION['page'],$_POST['directory']);
+        }
+        $dir = end($_SESSION['page']) ;
+        
     } else {
-        $dir = $_SESSION['dir'];
+        $dir = end($_SESSION['page']) ;
     }
     ?>
 
@@ -66,19 +81,6 @@
 ===================================================================================================-->
      <?php
         include '../components/navbar/navbar.php';
-        if (isset($_POST['path'])) {
-            $path = $_POST['path'];
-            $_SESSION['path'] = $path;
-        } else {
-            $path  =  $_SESSION['path'];
-        }
-
-        if (isset($_POST['directory'])) {
-            $dir = $_POST['directory'];
-            $_SESSION['dir'] = $dir;
-        } else {
-            $dir = $_SESSION['dir'];
-        }
         ?>
      <!-- END navbar 
 ===================================================================================================-->
@@ -91,7 +93,16 @@
 
          <!-- navbreadcrumb
 ===================================================================================================-->
-
+            <b><?php
+             foreach ($_SESSION['page'] as $item) {
+                echo  $item . "/" ;
+             }
+             ?>
+             </b>
+             <form action="" method = 'post'>
+                 <button type = 'btn' >Back</button>
+                 <input type='hidden' name='directory2' value='<?php end($_SESSION['page'])?>' >
+             </form>
          <!-- END navbreadcrumb
 ===================================================================================================-->
 

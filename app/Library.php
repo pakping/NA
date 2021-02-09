@@ -4,6 +4,7 @@ include '../auth/Sessionpersist.php';
 $_SESSION['path'] = '../img/';
 $_SESSION['dir'] = 'base';
 $folder = 'base';
+$_SESSION['page'] = array('base');
 ?>
 <!doctype html>
 <html lang="en">
