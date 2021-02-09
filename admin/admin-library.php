@@ -14,6 +14,7 @@ $folder = 'base';
     <title>Hello, world!</title>
     <meta charset="utf-8">
     <META NAME="robots" CONTENT="noindex,onfollow">
+	<link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
     <!-- END Required meta tags 
 ===================================================================================================-->
 
@@ -22,6 +23,7 @@ $folder = 'base';
     include '../components/head/head.php'
     ?>
     <link rel="stylesheet" href="../css/style-navbar.css">
+		<link href="../dist/css/lightbox.min.css" rel="stylesheet">
     <style>
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -64,7 +66,6 @@ $folder = 'base';
 =================================================================================================-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="" onclick="goBack()">backpage</a></li>
                 <li class="breadcrumb-item"><a href="../index.php"><?php echo $_SESSION['path']; ?></a></li>
                 <!-- <li class="breadcrumb-item active" aria-current="page"> Library</li> -->
             </ol>

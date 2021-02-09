@@ -11,9 +11,10 @@ $folder = 'base';
 <head>
     <!-- Required meta tags
 ===================================================================================================-->
-    <title>Hello, world!</title>
+    <title>Library</title>
     <meta charset="utf-8">
     <META NAME="robots" CONTENT="noindex,onfollow">
+	<link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
     <!-- END Required meta tags 
 ===================================================================================================-->
 
@@ -22,6 +23,7 @@ $folder = 'base';
     include '../components/head/head.php'
     ?>
     <link rel="stylesheet" href="../css/style-navbar.css">
+	<link href="../dist/css/lightbox.min.css" rel="stylesheet">	
     <style>
         .card-1 {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -165,6 +167,7 @@ $folder = 'base';
 
     <!--***END  Page Content 
 =================================================================================================-->
+	<br><br><br><br><br><br>
     <!-- Footer 
 =================================================================================================-->
     <?php

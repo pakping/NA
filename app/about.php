@@ -8,9 +8,10 @@ include '../auth/Sessionpersist.php';
 <head>
   <!-- Required meta tags 
   ===================================================================================================-->
-  <title>Hello, world!</title>
+  <title>เกียวกับเรา</title>
   <meta charset="utf-8">
   <meta NAME="robots" CONTENT="noindex,onfollow">
+ <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
   <!-- Required meta tags 
   ===================================================================================================-->
 

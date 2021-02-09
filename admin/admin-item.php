@@ -30,6 +30,7 @@
      <title>สินค้า</title>
      <meta charset="utf-8">
      <META NAME="robots" CONTENT="noindex,onfollow">
+	 <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
      <!-- Required meta tags 
 ===================================================================================================-->
 
@@ -42,6 +43,7 @@
      <!-- CSS
 ===================================================================================================-->
      <link rel="stylesheet" href="../css/style-navbar.css">
+	<link href="../dist/css/lightbox.min.css" rel="stylesheet">
      <style>
          .card-1 {
              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -101,7 +103,7 @@
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
                     ?>
-                             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <div class="card-body">
                                          <div class="row">
@@ -143,7 +145,6 @@
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
-                                         <p>รายละเอียด</p>
                                          <div class="row align-item-start">
                                              <div class="col">
                                                  <form action='../function/delete.php' method="POST">
