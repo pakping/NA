@@ -109,14 +109,6 @@ ul {
 
 /* --------body-----*/
 
-header {
-    background: url('img/banner.jpg') no-repeat center center;
-    background-size: cover;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    height: 500px;
-}
-
 .features-icons {
     padding-top: 5rem;
     padding-bottom: 5rem;
