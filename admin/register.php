@@ -10,6 +10,7 @@ require "../auth/Sessionpersist.php"
   <title>เพิ่มสมาชิก</title>
   <meta charset="utf-8">
   <META NAME="robots" CONTENT="noindex,onfollow">
+ <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
   <?php
   include '../components/head/head.php'
   ?>

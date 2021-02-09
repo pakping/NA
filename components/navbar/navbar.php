@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">The Na Thailand</a>
+  <div class="container-fluid">&ensp;
+  <img src="https://www.thenathailand.com/wp-content/uploads/2020/11/Nathailand-120x64-1.png" alt="" width="80" height="40">
+    <a class="navbar-brand" href="#">
+    &emsp;&ensp;The Na Thailand</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       <span class="navbar-toggler-icon"></span>

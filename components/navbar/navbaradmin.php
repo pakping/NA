@@ -20,9 +20,6 @@
         <li class="nav-item">
           <a class="nav-link" href="../admin/register.php">สร้างบัญชีใหม่</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/edit-user.php">จัดการบัญชี</a>
-        </li>
             <?php 
           }
             ?>
