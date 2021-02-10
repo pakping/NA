@@ -124,7 +124,7 @@
                  <?php
                     require "../db/connect.php";
 
-                    $Squery = "SELECT * FROM $dir ORDER BY dirname DESC";
+                    $Squery = "SELECT * FROM $dir ORDER BY type,dirname";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
@@ -150,7 +150,7 @@
                              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
-                                         <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                         <object data="<?php echo $img['path']; ?>" class="card-img-top" width= "100%" height="100%"> </object>
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
