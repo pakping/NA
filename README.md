@@ -1,2 +1,2 @@
 # NA
-# img/logo.ping ห้ามลบ
+img/logo.ping ห้ามลบ
