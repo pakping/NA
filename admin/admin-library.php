@@ -15,7 +15,7 @@ $_SESSION['page'] = array('base');
     <title>จัดการโฟรเดอร์สินค้า</title>
     <meta charset="utf-8">
     <META NAME="robots" CONTENT="noindex,onfollow">
-    <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
+    <link rel="icon" href="../img/logo.png" type="image/gif" sizes="16x16">
     <!-- END Required meta tags 
 ===================================================================================================-->
 

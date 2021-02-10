@@ -18,7 +18,7 @@
    <meta charset="utf-8">
    <META NAME="keywords" CONTENT="The Na Thailand">
    <META NAME="description" CONTENT="สินค้าดูแลสุขภาพและความงาม จากผู้เชี่ยวชาญ">
-   <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">
+   <link rel="icon" href="../img/logo.png" type="image/gif" sizes="16x16">
 
    <!-- END Required meta tags
 ===================================================================================================-->

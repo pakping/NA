@@ -9,7 +9,7 @@ include '../auth/Sessionpersist.php';
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <META NAME="robots" CONTENT="noindex,onfollow">
-  <link rel="icon" href="../img/logo.jpg" type="image/gif" sizes="16x16">  
+  <link rel="icon" href="../img/logo.png" type="image/gif" sizes="16x16">  
   <?php
   include '../components/head/head.php';
   ?>
