@@ -11,6 +11,7 @@ $filename = $_FILES['file_img']['name'];
 $filepath = $path . $filename;
 $select ="SELECT * FROM $cdir Where dirname = '$filename'";
 $result = mysqli_query($con,$select);
+echo $cdir;
 if (mysqli_num_rows($result)==0){
     $query = "INSERT INTO $cdir (dirname,path,type) VALUE ('$title','$filepath','file')";
     mysqli_query($con,$query);

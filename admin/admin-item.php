@@ -133,15 +133,15 @@
                                  <div class="card card-1">
                                      <div class="card-body">
                                          <div class="row">
-                                             <div class="col">
+                                             <div class="col-8">
                                                  <h5 class="card-title">โฟรเดอร์ <?php echo $img['dirname']; ?></h5>
                                              </div>
-                                             <div class="col">
+                                             <div class="col-4">
                                                  <form action="../function/delete.php" method="post">
                                                      <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
                                                      <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                                      <div class=""><br>
-                                                         <button class="btn btn-outline-danger" style="margin-top: -31px; margin-left: 84px;">
+                                                         <button class="btn btn-outline-danger" style="height: 100%; width: 100%; margin-top: -30px;">
                                                              <ion-icon name="trash-outline"></ion-icon>
                                                          </button>
                                                      </div>
@@ -167,7 +167,8 @@
                              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
-                                         <img src="<?php echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;">
+                                         <!-- <img src="<?php //echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;"> -->
+                                         <object data="<?php echo $img['path']; ?>" class="card-img-top" width= "100%" height="100%"></object>
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
