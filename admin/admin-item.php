@@ -3,29 +3,25 @@
  <?php
     $content = 'officer';
     include '../auth/Sessionpersist.php';
-    $_SESSION['ppath'] = $_SESSION['path'];
-    if (isset($_POST['path'])) {
-        $path = $_POST['path'];
-        $_SESSION['path'] = $path;
-    } else {
-        $path  =  $_SESSION['path'];
-    }
-    if (isset($_POST['directory2'])) {
+        if (isset($_POST['directory2'])) {
         array_pop($_SESSION['page']);
-        $x = end($_SESSION['page']);
         $dir = end($_SESSION['page']);
+        array_pop($_SESSION['path']);
         if (end($_SESSION['page']) == 'base') {
             header('location:../admin/admin-library.php');
         } else {
             header('location:../admin/admin-item.php');
         }
-    } elseif (isset($_POST['directory'])) {
+    }elseif (isset($_POST['directory'])) {
         if (end($_SESSION['page']) !== $_POST['directory']) {
             array_push($_SESSION['page'], $_POST['directory']);
+            array_push($_SESSION['path'],$_POST['directory']."/");  
         }
         $dir = end($_SESSION['page']);
+        $path = $_SESSION['path'];
     } else {
         $dir = end($_SESSION['page']);
+        $path = $_SESSION['path'];
     }
     ?>
  <!-- END Check Sessionpersist
@@ -95,7 +91,7 @@
                  <li class="breadcrumb-item active" aria-current="page">
                      <?php
                         foreach ($_SESSION['page'] as $item) {
-                            echo  $item . " /";
+                            echo  $item . "/";
                         }
                         ?>
                  </li>
@@ -124,7 +120,7 @@
                  <?php
                     require "../db/connect.php";
 
-                    $Squery = "SELECT * FROM $dir ORDER BY type DESC,dirname";
+                    $Squery = "SELECT * FROM `$dir` ORDER BY type DESC,dirname";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
@@ -138,7 +134,7 @@
                                              </div>
                                              <div class="col-4">
                                                  <form action="../function/delete.php" method="post">
-                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"]; ?>" />
                                                      <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                                      <div class=""><br>
                                                          <button class="btn btn-outline-danger" style="height: 100%; width: 100%; margin-top: -30px;">
@@ -168,14 +164,14 @@
                                  <div class="card card-1">
                                      <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
                                          <!-- <img src="<?php //echo $img['path']; ?>" class="card-img-top" alt="..." style="width: 100%;"> -->
-                                         <object data="<?php echo $img['path']; ?>" class="card-img-top" width= "100%" height="100%"></object>
+                                         <object data="<?php echo $img['path']; ?>" width="100%"></object>
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                          <div class="row align-item-start">
                                              <div class="col">
                                                  <form action='../function/delete.php' method="POST">
-                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"] ?>" />
+                                                     <input type='hidden' name='del' value="<?php echo $img["dirname"];?>" />
                                                      <input type='hidden' name='filetype' value="<?php echo $img["type"]; ?>" />
                                                      <button class="btn btn-outline-danger " type='submit' style="width: 100%;">
                                                          <ion-icon name="trash-outline" size="large"></ion-icon>

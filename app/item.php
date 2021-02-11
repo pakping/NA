@@ -3,29 +3,25 @@
  <?php
     $content = 'everyone';
     include '../auth/Sessionpersist.php';
-    $_SESSION['ppath'] = $_SESSION['path'];
-    if (isset($_POST['path'])) {
-        $path = $_POST['path'];
-        $_SESSION['path'] = $path;
-    } else {
-        $path  =  $_SESSION['path'];
-    }
-    if (isset($_POST['directory2'])) {
+if (isset($_POST['directory2'])) {
         array_pop($_SESSION['page']);
-        $x = end($_SESSION['page']);
         $dir = end($_SESSION['page']);
+        array_pop($_SESSION['path']);
         if (end($_SESSION['page']) == 'base') {
             header('location:../app/library.php');
         } else {
             header('location:../app/item.php');
         }
-    } elseif (isset($_POST['directory'])) {
+    }elseif (isset($_POST['directory'])) {
         if (end($_SESSION['page']) !== $_POST['directory']) {
             array_push($_SESSION['page'], $_POST['directory']);
+            array_push($_SESSION['path'],$_POST['directory']."/");  
         }
         $dir = end($_SESSION['page']);
+        $path = $_SESSION['path'];
     } else {
         $dir = end($_SESSION['page']);
+        $path = $_SESSION['path'];
     }
     ?>
 
@@ -90,7 +86,7 @@
 ===================================================================================================-->
          <nav aria-label="breadcrumb">
              <ol class="breadcrumb">
-                 <li class="breadcrumb-item"><a href="../admin/admin-index.php">Home</a></li>
+                 <li class="breadcrumb-item"><a href="../app/home.php">Home</a></li>
 
                  <li class="breadcrumb-item active" aria-current="page">
                      <?php
@@ -124,7 +120,7 @@
                  <?php
                     require "../db/connect.php";
 
-                    $Squery = "SELECT * FROM $dir ORDER BY type,dirname";
+                    $Squery = "SELECT * FROM `$dir` ORDER BY type,dirname";
                     if ($result = mysqli_query($con, $Squery)) {
                         while ($img = mysqli_fetch_array($result)) {
                             if ($img['type'] == 'folder') {
@@ -135,7 +131,7 @@
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
                                          <form action='item.php' method="POST">
                                              <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
-                                             <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                             <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                              <button type="submit" class="btn" style="width: 100%; height: 287px;">
                                                  <ion-icon name="folder-open-outline" size="large"></ion-icon><br> More
                                              </button>
@@ -150,7 +146,7 @@
                              <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                                  <div class="card card-1">
                                      <a href="<?php echo  $img['path']; ?>" data-lightbox="<?php echo $img['dirname']; ?>" data-title="<?php echo $img['dirname']; ?> " style="height: 200px; overflow: hidden;">
-                                         <object data="<?php echo $img['path']; ?>" class="card-img-top" width= "100%" height="100%"> </object>
+                                         <object data="<?php echo $img['path']; ?>" class="card-img-top" width= "100%"> </object>
                                      </a>
                                      <div class="card-body">
                                          <h5 class="card-title"><?php echo $img['dirname']; ?></h5>
@@ -192,7 +188,6 @@
 
 
 
-     </div>
      <!-- container -->
 
      <!--***END Page Content

@@ -19,7 +19,7 @@
                                     <label for="floatingInput">ชื่อรูปภาพ</label>
                                 </div>
                                 <div class="input-group mb-3">
-                                    <input type="file" name="file_img" class="form-control" id="inputGroupFile02" name="file_img" multiple accept="image/*,video/*" required>
+                                    <input type="file" name="file_img" class="form-control" id="inputGroupFile02" accept="image/*,video/*" required>
                                     <label class="input-group-text" for="inputGroupFile02">Upload</label>
                                 </div>
                             </div>

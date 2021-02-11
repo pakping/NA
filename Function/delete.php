@@ -7,31 +7,34 @@ $cdir = end($_SESSION['page']);//ชื่อ directory ปัจจุบัน
 $id = $_POST['del'];//dirname ของภาพหรือโฟลเดอร์ที่กด
 $type = $_POST['filetype'];
 $idd = '"' . $id . '"';
-echo "type is " . $cdir;
-$aaaaa = "SELECT * FROM $cdir WHERE dirname ='$id'";
+//echo "idd is  " . $idd . '<br>';
+$aaaaa = "SELECT * FROM `$cdir` WHERE dirname ='$id'";
+//echo "query : " . $aaaaa . '<br>';
 if ($result = mysqli_query($con, $aaaaa)) {
     while ($q = mysqli_fetch_array($result)) {
         $target = $q["path"] ;
-        echo $target;
+        //echo $target;
         }
 }
 if ($type == 'file'){
     if (unlink($target)){
-        $query2 = "DELETE From $cdir Where dirname ='$id'";
+        $query2 = "DELETE From `$cdir` Where dirname ='$id'";
         mysqli_query($con,$query2);
-        echo '<script>alert("Delete File Successfully!")
-        window.location.href ="../admin/admin-library.php"</script>';
-    }
-    else {
-        echo   '<script>alert("Fail to delete file (file might be in use in another program)")
-        window.location.href ="../admin/admin-library.php"</script>';
-    }
+        if (end($_SESSION['page']) == "base"){
+            echo   '<script>alert("Delete Folder Successfully!")
+            window.location.href ="../admin/admin-library.php"</script>'; 
+        }
+        else {
+            echo   '<script>alert("Delete Folder Successfully!")
+        window.location.href ="../admin/admin-item.php"</script>';
+        }
+}
 }
 elseif ($type == 'folder'){
     if (rmdir($target)){
-        $query2 = "DELETE From $cdir Where dirname ='$id'";
+        $query2 = "DELETE From `$cdir` Where dirname ='$id'";
         mysqli_query($con,$query2);
-        $query3 = "DROP TABLE $id";
+        $query3 = "DROP TABLE `$id`";
         mysqli_query($con,$query3);
         if (end($_SESSION['page']) == "base"){
             echo   '<script>alert("Delete Folder Successfully!")
@@ -41,10 +44,9 @@ elseif ($type == 'folder'){
             echo   '<script>alert("Delete Folder Successfully!")
         window.location.href ="../admin/admin-item.php"</script>';
         }
-        
     }
     else {
-        echo '<script>alert("Fail to delete please delete all file in folder first")
+        echo '<script>alert("Fail please check folder contents")
         window.location.href ="../admin/admin-library.php"</script>';
     }
 }

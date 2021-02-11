@@ -20,7 +20,7 @@ if (isset($_SESSION)) {
         elseif ($_SESSION['type'] == 'guest') {
             if ($content != 'everyone'){
                 echo   '<script>alert("Access denied!")
-                window.location.href ="../admin/admin-library.php"</script>';
+                window.location.href ="../app/home.php"</script>';
             }
         }
     }

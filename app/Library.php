@@ -1,10 +1,11 @@
 <?php
 $content = "everyone";
 include '../auth/Sessionpersist.php';
-$_SESSION['path'] = '../img/';
+$_SESSION['path'] = array('../img/');
 $_SESSION['dir'] = 'base';
 $folder = 'base';
 $_SESSION['page'] = array('base');
+?>
 ?>
 <!doctype html>
 <html lang="en">
@@ -84,10 +85,8 @@ $_SESSION['page'] = array('base');
 ================================================================================================= -->
             <?php
             require "../db/connect.php";
-            $_SESSION['path'] = '../img/';
-            $_SESSION['dir'] = 'base';
             $folder = 'base';
-            $Squery = "SELECT * FROM $folder ORDER BY type DESC";
+            $Squery = "SELECT * FROM `$folder` ORDER BY type DESC";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
 
@@ -108,7 +107,7 @@ $_SESSION['page'] = array('base');
                                     <div class="col">
                                         <form action='item.php' method="POST">
                                             <input type='hidden' name='path' value="<?php echo $img["path"]; ?>" />
-                                            <input type='hidden' name='directory' value=" <?php echo $img["dirname"]; ?>" />
+                                            <input type='hidden' name='directory' value="<?php echo $img["dirname"]; ?>" />
                                             <div class="d-grid gap-2">
                                                 <button type="submit" class="btn p-2" style="height: 267px;">
                                                     <ion-icon name="folder-open-outline" size="large"></ion-icon><br> 

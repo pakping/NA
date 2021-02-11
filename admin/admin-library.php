@@ -1,7 +1,7 @@
 <?php
 $content = "officer";
 include '../auth/Sessionpersist.php';
-$_SESSION['path'] = '../img/';
+$_SESSION['path'] = array('../img/');
 $_SESSION['dir'] = 'base';
 $folder = 'base';
 $_SESSION['page'] = array('base');
@@ -92,7 +92,7 @@ $_SESSION['page'] = array('base');
             <?php
             require "../db/connect.php";
 
-            $Squery = "SELECT * FROM $folder ORDER BY type DESC,dirname";
+            $Squery = "SELECT * FROM `$folder` ORDER BY type DESC,dirname";
             if ($result = mysqli_query($con, $Squery)) {
                 while ($img = mysqli_fetch_array($result)) {
 
