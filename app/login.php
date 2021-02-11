@@ -1,9 +1,15 @@
 <?php
-$content = 'everyone';
-include '../auth/Sessionpersist.php';
+$content = 'login';
+session_start();
 $_SESSION['lastpage'] = "../app/login.php";
-if (isset($_SESSION['username'])) {
-    header('location:../app/library.php');
+if (isset($_SESSION['Username'])) {
+    if ($_SESSION['type']=='user'){
+    header('location:../app/home.php');
+    }
+    elseif ($_SESSION['type']=='admin'){
+        header('location:../admin/admin-index.php');
+    }
+
 }
 ?>
 <!DOCTYPE html>

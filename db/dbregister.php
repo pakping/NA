@@ -4,7 +4,7 @@ require 'connect.php';
 $name = $_POST['uname'];
 $pass = $_POST['psw'];
 $pass2 = $_POST['psw-repeat'];
-$access = 'officer';
+$access = 'user';
 
 if ($pass == $pass2) {
     /* $uname =$_SESSION["Username"]; */

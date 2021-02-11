@@ -1,7 +1,7 @@
  <!-- Check Sessionpersist
 ===================================================================================================-->
  <?php
-    $content = 'officer';
+    $content = 'admin';
     include '../auth/Sessionpersist.php';
         if (isset($_POST['directory2'])) {
         array_pop($_SESSION['page']);

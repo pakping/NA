@@ -39,7 +39,7 @@ require "../auth/Sessionpersist.php"
                 <tbody>
                     <?php
                     require '../db/connect.php';
-                    $resuld = mysqli_query($con, "SELECT * FROM user WHERE Access='officer'");
+                    $resuld = mysqli_query($con, "SELECT * FROM user WHERE Access='user'");
                     $a = 1;
 
                     while ($row = mysqli_fetch_array($resuld)) {

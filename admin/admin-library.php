@@ -1,5 +1,5 @@
 <?php
-$content = "officer";
+$content = "admin";
 include '../auth/Sessionpersist.php';
 $_SESSION['path'] = array('../img/');
 $_SESSION['dir'] = 'base';

@@ -21,9 +21,19 @@
           <a class="nav-link" href="about.php">เกี่ยวกับเรา</a>
         </li>
       </ul>
+      <?php
+      if (isset($_SESSION['Username'])){
+      ?>
+      <ul class="navbar-nav ml-auto">
+        <form action="../auth/logout.php" method="post">
+          <button class="btn" type="submit">ออกจากระบบ</button>
+        </form>
+      </ul>
+<?php  } else {?>
       <ul class="navbar-nav ml-auto">
         <a href="../app/login.php"><button class="btn">เข้าสู่ระบบ</button></a>
       </ul>
+      <?php } ?>
     </div>
   </div>
 </nav>

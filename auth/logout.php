@@ -6,4 +6,4 @@ $sql = "UPDATE User SET LoginStatus = '0', LastUpdate = '0000-00-00 00:00:00' WH
 $query = mysqli_query($con, $sql);
 session_destroy();
 echo   '<script>alert("Logout successfully")
-        window.location.href ="../app/home.php"</script>';
+        window.location.href ="../app/login.php"</script>';

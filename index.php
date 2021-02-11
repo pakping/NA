@@ -9,17 +9,13 @@ if (isset($_SESSION['type'])){
         echo '<script>
     window.location.href ="admin/admin-index.php"</script>';
     }
-    elseif ($_SESSION['type']=='guest'){
-        echo '<script>
-    window.location.href ="app/home.php"</script>';
-    }
     else {
         echo '<script>
-    window.location.href ="app/home.php"</script>';
+    window.location.href ="app/login.php"</script>';
     }
 }
 else {
     echo '<script>
-    window.location.href ="app/home.php"</script>';
+    window.location.href ="app/login.php"</script>';
 }
 ?>
